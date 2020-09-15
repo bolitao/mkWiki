@@ -1,7 +1,23 @@
 site_name: TWiki
+site_description: Boli's notes and drafts
+site_author: Boli Tao
+site_url: https://wiki.bolitao.xyz
 theme:
   name: material
   language: zh
+  font:
+    text: Noto Serif SC
+    code: Jetbrains Mono
+plugins:
+  - search
+extra:
+  search:
+    language: 'en, zh'
+#   social:
+#     - type: 'home'
+#       link: 'https://bolitao.xyz'
 nav:
-  - Home: index.md
-  - About: about.md
+  # - Home: index.md
+  # - About: about.md
+  # - Software:
+  #   - '使用 PICGO': 'Software/PicGo + GitHub + JSDeliver + Typora.md'
