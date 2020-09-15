@@ -1,3 +1,3 @@
 # About
 
-Boli's personal wiki powered by [MkDocs](https://github.com/mkdocs/mkdocs/).
+Boli's personal [wiki](https://wiki.bolitao.xyz) powered by [MkDocs](https://github.com/mkdocs/mkdocs/).
