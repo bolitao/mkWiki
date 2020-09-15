@@ -1,0 +1,7 @@
+site_name: TWiki
+theme:
+  name: material
+  language: zh
+nav:
+  - Home: index.md
+  - About: about.md
