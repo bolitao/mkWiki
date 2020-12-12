@@ -512,7 +512,7 @@ GATEWAY=192.168.11.2
 NETMASK=255.255.255.0
 DNS1=192.168.11.2
 </code></pre>
-<p><code>network.service</code> isn't available on CentOS8 by default, so we should use <code>NetworkManager.service</code> and restart the it:</p>
+<p><code>network.service</code> isn't available on CentOS8 by default, so we should use <code>NetworkManager.service</code> and restart it:</p>
 <pre><code class="language-shell">sudo systemctl restart NetworkManager
 # or use the below command:
 # sudo nmcli connection reload

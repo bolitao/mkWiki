@@ -42,7 +42,7 @@ NETMASK=255.255.255.0
 DNS1=192.168.11.2
 ```
 
-`network.service` isn't available on CentOS8 by default, so we should use `NetworkManager.service` and restart the it:
+`network.service` isn't available on CentOS8 by default, so we should use `NetworkManager.service` and restart it:
 
 ``` shell
 sudo systemctl restart NetworkManager
