@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Java/JavaTestArticle/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/">
       
       
         <meta name="author" content="Boli Tao">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Test Article - Tiki</title>
+        <title>弹性伸缩 - Tiki</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-article" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Test Article
+              弹性伸缩
             
           </span>
         </div>
@@ -211,12 +211,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
     <label class="md-nav__link" for="nav-3-1">
       Java
       <span class="md-nav__icon md-icon"></span>
@@ -233,20 +231,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../Java/JavaTestArticle/" class="md-nav__link">
       Test Article
     </a>
-    
   </li>
 
         
@@ -320,10 +309,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     <label class="md-nav__link" for="nav-3-3">
       PaaS
       <span class="md-nav__icon md-icon"></span>
@@ -340,11 +331,66 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        弹性伸缩
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       弹性伸缩
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    伸缩模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    限制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    灵感
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -434,8 +480,42 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    伸缩模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    限制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    方案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    灵感
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -448,8 +528,32 @@
               
                 
                 
-                <h1 id="test-article">Test Article</h1>
-<p>This is a test article.</p>
+                  <h1>弹性伸缩</h1>
+                
+                <h2 id="_1">伸缩模式</h2>
+<ul>
+<li>定时</li>
+<li>动态：根据性能指标</li>
+<li>固定数量：设置健康实例数，健康的服务器数量小于该值则增加实例</li>
+<li>自定义：通过 API 调用您的自有监控系统，执行手工收缩</li>
+<li>手工执行伸缩规则</li>
+<li>手工添加或移出既有的实例</li>
+<li>自定义 MinSize、MaxSize，弹性伸缩会自动创建或释放实例，将当前实例数维持在 MinSize 与 MaxSize 之间</li>
+<li>健康：如实例为非 Running 状态，弹性伸缩将自动移出或释放不健康的实例</li>
+<li>多模式并行</li>
+</ul>
+<h2 id="_2">限制</h2>
+<ul>
+<li>应用必须是无状态、可横向拓展的</li>
+<li>动态伸缩的服务器适合用作应用服务器，不适合存储会话、数据、日志等</li>
+</ul>
+<h2 id="_3">方案</h2>
+<ol>
+<li>k8s</li>
+<li>直接接入新机器</li>
+</ol>
+<h2 id="_4">灵感</h2>
+<p>腾讯的 k8s 伸缩。</p>
                 
               
               
@@ -468,7 +572,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../../about/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -477,19 +581,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                About
+                数据库日志
               </div>
             </div>
           </a>
         
         
-          <a href="../../MySQL/%E5%8D%87%E7%BA%A7/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../../Software/Markdown/PicGo%20%2B%20GitHub%20%2B%20JSDeliver%20%2B%20Typora/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                MySQL 升级
+                使用 Typecho + PicGo 进行图片上传
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
