@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Java/JavaTestArticle/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/">
       
       
         <meta name="author" content="Boli Tao">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Test Article - Tiki</title>
+        <title>npn 和 yarn 的网络问题 - Tiki</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-article" class="md-skip">
+        <a href="#npn-yarn" class="md-skip">
           跳转至
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Test Article
+              npn 和 yarn 的网络问题
             
           </span>
         </div>
@@ -211,10 +211,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
     <label class="md-nav__link" for="nav-3-1">
       FrontEnd
       <span class="md-nav__icon md-icon"></span>
@@ -223,45 +225,6 @@
       <label class="md-nav__title" for="nav-3-1">
         <span class="md-nav__icon md-icon"></span>
         FrontEnd
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-nav__link">
-      npn 和 yarn 的网络问题
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
-    <label class="md-nav__link" for="nav-3-2">
-      Java
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Java" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        <span class="md-nav__icon md-icon"></span>
-        Java
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -281,9 +244,46 @@
     
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Test Article
+      npn 和 yarn 的网络问题
     </a>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    <label class="md-nav__link" for="nav-3-2">
+      Java
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Java" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Java/JavaTestArticle/" class="md-nav__link">
+      Test Article
+    </a>
   </li>
 
         
@@ -293,7 +293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-nav__link">
+    <a href="../../Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-nav__link">
       TSF 异常、事务问题复现
     </a>
   </li>
@@ -497,8 +497,26 @@
               
                 
                 
-                <h1 id="test-article">Test Article</h1>
-<p>This is a test article.</p>
+                <h1 id="npn-yarn">npn 和 yarn 的网络问题</h1>
+<p><code>.npmrc</code>:</p>
+<pre><code class="language-npmrc">proxy=http://127.0.0.1:10809
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+registry=https://registry.npm.taobao.org
+phantomjs_cdnurl=http://cnpmjs.org/downloads
+electron_mirror=https://npm.taobao.org/mirrors/electron/
+sqlite3_binary_host_mirror=https://foxgis.oss-cn-shanghai.aliyuncs.com/
+profiler_binary_host_mirror=https://npm.taobao.org/mirrors/node-inspector/
+chromedriver_cdnurl=https://cdn.npm.taobao.org/dist/chromedriver
+</code></pre>
+<p><code>.yarnrc</code>:</p>
+<pre><code class="language-yarnrc">registry &quot;https://registry.npm.taobao.org&quot;
+sass_binary_site &quot;https://npm.taobao.org/mirrors/node-sass/&quot;
+phantomjs_cdnurl &quot;http://cnpmjs.org/downloads&quot;
+electron_mirror &quot;https://npm.taobao.org/mirrors/electron/&quot;
+sqlite3_binary_host_mirror &quot;https://foxgis.oss-cn-shanghai.aliyuncs.com/&quot;
+profiler_binary_host_mirror &quot;https://npm.taobao.org/mirrors/node-inspector/&quot;
+chromedriver_cdnurl &quot;https://cdn.npm.taobao.org/dist/chromedriver&quot;
+</code></pre>
                 
               
               
@@ -517,7 +535,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../../about/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -526,19 +544,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                npn 和 yarn 的网络问题
+                About
               </div>
             </div>
           </a>
         
         
-          <a href="../TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../Java/JavaTestArticle/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                TSF 异常、事务问题复现
+                Test Article
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
