@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/MySQL/%E5%8D%87%E7%BA%A7/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FrontEnd/vue%2Bwebstorm/">
       
       
         <meta name="author" content="Boli Tao">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MySQL 升级 - Tiki</title>
+        <title>Vue+webstorm - Tiki</title>
       
     
     
@@ -62,11 +62,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#mysql" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              MySQL 升级
+              Vue+webstorm
             
           </span>
         </div>
@@ -211,10 +206,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
     <label class="md-nav__link" for="nav-3-1">
       FrontEnd
       <span class="md-nav__icon md-icon"></span>
@@ -233,7 +230,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" class="md-nav__link">
+    <a href="../Nuxt%2C%20Vuetify%20Start/" class="md-nav__link">
       Nuxt, Vuetify Start
     </a>
   </li>
@@ -245,7 +242,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-nav__link">
+    <a href="../npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-nav__link">
       npn 和 yarn 的网络问题
     </a>
   </li>
@@ -255,11 +252,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../FrontEnd/vue%2Bwebstorm/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Vue+webstorm
     </a>
+    
   </li>
 
         
@@ -321,12 +325,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
     <label class="md-nav__link" for="nav-3-3">
       MySQL
       <span class="md-nav__icon md-icon"></span>
@@ -343,153 +345,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        MySQL 升级
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../MySQL/%E5%8D%87%E7%BA%A7/" class="md-nav__link">
       MySQL 升级
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-mysql" class="md-nav__link">
-    1. MySQL 安装包准备
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 数据库服务器确认
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 数据备份
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 升级前准备
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 升级前准备">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-keepalived" class="md-nav__link">
-    4.1 关闭 keepalived
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-mysql" class="md-nav__link">
-    4.2 关闭 MySQL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-binlog" class="md-nav__link">
-    4.3 备份 binlog
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5. 正式升级
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mycnf" class="md-nav__link">
-    6. 修改 my.cnf 配置文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-mysql_upgrade" class="md-nav__link">
-    7. 运行 mysql_upgrade 升级数据字典
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-mysql" class="md-nav__link">
-    8. 修改启动脚本重启 MySQL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    9. 设置环境变量
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10" class="md-nav__link">
-    10. 验证升级
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-keepalived" class="md-nav__link">
-    11. 恢复 keepalived
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    12. 主从连接检查
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -499,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-nav__link">
+    <a href="../../MySQL/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-nav__link">
       慢查询排查
     </a>
   </li>
@@ -511,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" class="md-nav__link">
+    <a href="../../MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" class="md-nav__link">
       数据库日志
     </a>
   </li>
@@ -633,280 +493,17 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-mysql" class="md-nav__link">
-    1. MySQL 安装包准备
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 数据库服务器确认
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3. 数据备份
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    4. 升级前准备
-  </a>
-  
-    <nav class="md-nav" aria-label="4. 升级前准备">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-keepalived" class="md-nav__link">
-    4.1 关闭 keepalived
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-mysql" class="md-nav__link">
-    4.2 关闭 MySQL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-binlog" class="md-nav__link">
-    4.3 备份 binlog
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    5. 正式升级
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mycnf" class="md-nav__link">
-    6. 修改 my.cnf 配置文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-mysql_upgrade" class="md-nav__link">
-    7. 运行 mysql_upgrade 升级数据字典
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-mysql" class="md-nav__link">
-    8. 修改启动脚本重启 MySQL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    9. 设置环境变量
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10" class="md-nav__link">
-    10. 验证升级
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-keepalived" class="md-nav__link">
-    11. 恢复 keepalived
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    12. 主从连接检查
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="mysql">MySQL 升级</h1>
-<p>虽然我非常反对手动编译或使用 generic 二进制文件安装 Linux 软件包，但我们公司的运维组似乎十分热衷于此，好巧不巧我在运维组工作过几天，接手了升级 MySQL 的活，于是记录一下使用二进制包升级 MySQL 的操作。</p>
-<h2 id="1-mysql">1. MySQL 安装包准备</h2>
-<p>软件压缩包名：</p>
-<pre><code class="language-shell">mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
-</code></pre>
-<p>从 FTP 服务器下载（或随便其他方式拿到二进制包）：</p>
-<pre><code class="language-shell">wget -P /mysql/ http://ip:port/path/to/ftp_dir/mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
-</code></pre>
-<h2 id="2">2. 数据库服务器确认</h2>
-<ol>
-<li>测试环境服务器：见 Excel 表格</li>
-<li>生产环境服务器：见 Excel 表格</li>
-</ol>
-<h2 id="3">3. 数据备份</h2>
-<p>创建备份文件夹：</p>
-<pre><code class="language-shell">mkdir /mysql/dbbackup
-</code></pre>
-<p>备份 MySQL 库：</p>
-<pre><code class="language-shell">mysqldump -uroot -p'mysql_password' --master-data=2 -c db_name &gt; /mysql/dbbackup/db_name_20200909.sql
-</code></pre>
-<h2 id="4">4. 升级前准备</h2>
-<p><strong>先升级从，再升级主。</strong></p>
-<h3 id="41-keepalived">4.1 关闭 keepalived</h3>
-<pre><code class="language-shell">service keepalived stop
-</code></pre>
-<h3 id="42-mysql">4.2 关闭 MySQL</h3>
-<pre><code class="language-shell">su - //切换到超级用户
-service mysql stop
-</code></pre>
-<h3 id="43-binlog">4.3 备份 binlog</h3>
-<pre><code class="language-shell">mkdir /mysql/log_20200909_bak &amp;&amp; cp -pr /mysql/log/* /mysql/log_20200908_bak
-</code></pre>
-<h2 id="5">5. 正式升级</h2>
-<ol>
-<li>解压、修改目录名、赋权：</li>
-</ol>
-<pre><code class="language-shell">tar -xvf /mysql/mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz -C /mysql/service/ &amp;&amp; mv /mysql/service/mysql-5.7.31-linux-glibc2.12-x86_64/ /mysql/service/mysql-5.7.31/ &amp;&amp; chown -R mysql.mysql /mysql/service/mysql-5.7.31
-</code></pre>
-<ol>
-<li>删除压缩文件</li>
-</ol>
-<pre><code class="language-shell">rm /mysql/mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
-</code></pre>
-<h2 id="6-mycnf">6. 修改 my.cnf 配置文件</h2>
-<ol>
-<li>备份旧的配置文件、修改新的配置：</li>
-</ol>
-<pre><code class="language-shell">cp /etc/my.cnf /etc/my_5.7.28.cnf &amp;&amp; vi /etc/my.cnf
-</code></pre>
-<p>修改以下行：</p>
-<pre><code class="language-conf">basedir=/mysql/service/mysql-5.7.31
-</code></pre>
-<ol>
-<li>执行 MySQL 的启动：</li>
-</ol>
-<pre><code class="language-shell">/mysql/service/mysql-5.7.31/bin/mysqld --defaults-file=/etc/my.cnf &amp;
-</code></pre>
-<p>检查是否启动：</p>
-<pre><code class="language-shell">ps -ef | grep mysqld | grep -v grep
-</code></pre>
-<h2 id="7-mysql_upgrade">7. 运行 mysql_upgrade 升级数据字典</h2>
-<ol>
-<li>关闭 MySQL：</li>
-</ol>
-<p><code>shell
-   /mysql/service/mysql-5.7.31/bin/mysql -uroot -p'mysql_password' --execute="SET GLOBAL innodb_fast_shutdown=0" &amp;&amp; /mysql/service/mysql-5.7.31/bin/mysqladmin -uroot -p'mysql_password' shutdown</code></p>
-<ol>
-<li>启动新版 MySQL：</li>
-</ol>
-<pre><code class="language-shell">/mysql/service/mysql-5.7.31//bin/mysqld --defaults-file=/etc/my.cnf &amp;
-</code></pre>
-<ol>
-<li>检查兼容性：</li>
-</ol>
-<pre><code class="language-shell">/mysql/service/mysql-5.7.31/bin/mysql_upgrade -uroot -p'mysql_password'
-</code></pre>
-<ol>
-<li>检查无误后停止 MySQL：</li>
-</ol>
-<pre><code class="language-shell">/mysql/service/mysql-5.7.31/bin/mysqladmin -uroot -p'mysql_password' shutdown
-</code></pre>
-<h2 id="8-mysql">8. 修改启动脚本重启 MySQL</h2>
-<ol>
-<li>备份原启动脚本、复制新启动脚本：</li>
-</ol>
-<pre><code class="language-shell">mv /etc/init.d/mysql /etc/init.d/mysql_20200908 &amp;&amp; cp /mysql/service/mysql-5.7.31/support-files/mysql.server /etc/init.d/mysql
-</code></pre>
-<ol>
-<li>修改启动脚本：</li>
-</ol>
-<pre><code class="language-shell">vi /etc/init.d/mysql
-</code></pre>
-<pre><code class="language-shell"># 修改内容：
-basedir=/mysql/service/mysql-5.7.31/
-datadir=/mysql/data/
-</code></pre>
-<ol>
-<li>添加开机启动、启动 MySQL：</li>
-</ol>
-<pre><code class="language-shell">chkconfig --add mysql &amp;&amp; chkconfig mysql on &amp;&amp; service mysql restart
-</code></pre>
-<h2 id="9">9. 设置环境变量</h2>
-<ol>
-<li>编辑：</li>
-</ol>
-<pre><code class="language-shell">vi /etc/profile
-</code></pre>
-<p>修改 <code>PATH</code>：</p>
-<pre><code class="language-shell">/mysql/service/mysql-5.7.31/bin:$PATH
-</code></pre>
-<ol>
-<li>刷新环境变量</li>
-</ol>
-<pre><code class="language-shell">source /etc/profile
-</code></pre>
-<h2 id="10">10. 验证升级</h2>
-<pre><code class="language-shell">mysql -V
-</code></pre>
-<h2 id="11-keepalived">11. 恢复 keepalived</h2>
-<pre><code class="language-shell">su - //切换到超级用户
-service keepalived restart
-</code></pre>
-<h2 id="12">12. 主从连接检查</h2>
-<ol>
-<li>检查 MySQL 主从状态：</li>
-</ol>
-<pre><code class="language-sql">show slave status\G;
-</code></pre>
-<ol>
-<li>检查 keepalived 状态：</li>
-</ol>
-<pre><code class="language-shell">cat /app/log/keepalived/status
-</code></pre>
+                  <h1>Vue+webstorm</h1>
+                
+                <ul>
+<li><a href="https://blog.zuiyu1818.cn/posts/vue_webstorm.html">前端 | WebStorm 符合 ESLint 规范开发 Vue 配置 | 醉渔小站</a></li>
+</ul>
                 
               
               
@@ -925,7 +522,7 @@ service keepalived restart
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -934,19 +531,19 @@ service keepalived restart
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                TSF 异常、事务问题复现
+                npn 和 yarn 的网络问题
               </div>
             </div>
           </a>
         
         
-          <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../Java/JavaTestArticle/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                慢查询排查
+                Test Article
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
