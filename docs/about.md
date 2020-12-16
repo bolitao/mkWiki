@@ -1,5 +1,3 @@
 # About
 
-Welcome!
-
-This is boli's wiki site.
+Welcome to boli's wiki.
