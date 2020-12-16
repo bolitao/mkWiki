@@ -1,23 +1,38 @@
-site_name: TWiki
+site_name: Tiki
 site_description: Boli's notes and drafts
 site_author: Boli Tao
 site_url: https://wiki.bolitao.xyz
+copyright: '&copy; 2020 bolitao'
 theme:
   name: material
-  language: zh
+  # language: 'zh'
+  # icon:
+  #   logo: material/library
+  # favicon: images/favicon.png
+  palette:
+    # scheme: slate
+    primary: 'deep purple'
+    accent: 'deep purple'
+  shortcuts:
+    next: 78     # n
+    previous: 80 # p
+    search: 83   # s
   font:
     text: Noto Serif SC
     code: Jetbrains Mono
+  # features:
+  #   - tabs: true
+  #   - navigation.tabs
 plugins:
   - search
+      # lang: 'en', 'ru'
 extra:
+  social:
+    - icon: fontawesome/solid/home
+      link: https://bolitao.xyz
   search:
-    language: 'en, zh'
-#   social:
-#     - type: 'home'
-#       link: 'https://bolitao.xyz'
-nav:
-  # - Home: index.md
-  # - About: about.md
-  # - Software:
-  #   - '使用 PICGO': 'Software/PicGo + GitHub + JSDeliver + Typora.md'
+    language: 'en, ja'
+# google_analytics:
+#   - UA-XXXXXXXX-X
+#   - auto
+# nav:
