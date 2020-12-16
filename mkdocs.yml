@@ -10,9 +10,9 @@ theme:
   #   logo: material/library
   # favicon: images/favicon.png
   palette:
-    # scheme: slate
+    scheme: slate
     primary: 'deep purple'
-    accent: 'deep purple'
+    accent: 'blue'
   shortcuts:
     next: 78     # n
     previous: 80 # p
