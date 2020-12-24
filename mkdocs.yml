@@ -9,6 +9,13 @@ theme:
   # icon:
   #   logo: material/library
   # favicon: images/favicon.png
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - java
+    - python
+    - shell
+    - log
   palette:
     scheme: slate
     primary: 'deep purple'
