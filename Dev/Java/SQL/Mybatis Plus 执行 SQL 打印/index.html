@@ -12,23 +12,23 @@
         <meta name="description" content="Boli's notes and drafts">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Java/SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/">
       
       
         <meta name="author" content="Boli Tao">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
     
     
       
-        <title>TSF 异常、事务问题复现 - Tiki</title>
+        <title>Mybatis Plus 执行 SQL 打印 - Tiki</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d3202873.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ff0a5ce4.min.css">
       
       
         
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tsf" class="md-skip">
+        <a href="#mybatis-plus-sql" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              TSF 异常、事务问题复现
+              Mybatis Plus 执行 SQL 打印
             
           </span>
         </div>
@@ -167,7 +167,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Welcome to MkDocs" class="md-nav__link">
+    <a href="../../../.." title="Welcome to MkDocs" class="md-nav__link">
       Welcome to MkDocs
     </a>
   </li>
@@ -179,7 +179,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../about/" title="About" class="md-nav__link">
+    <a href="../../../../about/" title="About" class="md-nav__link">
       About
     </a>
   </li>
@@ -235,7 +235,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Docker/Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Windows Docker 代理设置" class="md-nav__link">
+    <a href="../../../Docker/Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Windows Docker 代理设置" class="md-nav__link">
       Windows Docker 代理设置
     </a>
   </li>
@@ -273,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" title="Nuxt, Vuetify Start" class="md-nav__link">
+    <a href="../../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" title="Nuxt, Vuetify Start" class="md-nav__link">
       Nuxt, Vuetify Start
     </a>
   </li>
@@ -285,7 +285,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" title="npn 和 yarn 的网络问题" class="md-nav__link">
+    <a href="../../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" title="npn 和 yarn 的网络问题" class="md-nav__link">
       npn 和 yarn 的网络问题
     </a>
   </li>
@@ -325,7 +325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../JavaTestArticle/" title="Test Article" class="md-nav__link">
+    <a href="../../JavaTestArticle/" title="Test Article" class="md-nav__link">
       Test Article
     </a>
   </li>
@@ -335,83 +335,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        TSF 异常、事务问题复现
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="TSF 异常、事务问题复现" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" title="TSF 异常、事务问题复现" class="md-nav__link">
       TSF 异常、事务问题复现
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    复现
-  </a>
-  
-    <nav class="md-nav" aria-label="复现">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    额外引入的依赖
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sqlsessionfactory-bean-mybatis-plus" class="md-nav__link">
-    修改 sqlSessionFactory 的 bean 为 mybatis plus 提供
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nes-test" class="md-nav__link">
-    导入 nes 出问题的代码（test 包）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    期望的正常情况
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -419,10 +347,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3-3">
       SQL
@@ -440,11 +370,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/" title="Mybatis Plus 执行 SQL 打印" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Mybatis Plus 执行 SQL 打印
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Mybatis Plus 执行 SQL 打印" class="md-nav__link md-nav__link--active">
       Mybatis Plus 执行 SQL 打印
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    依赖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    相关
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -480,7 +469,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" title="跨域问题" class="md-nav__link">
+    <a href="../../%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" title="跨域问题" class="md-nav__link">
       跨域问题
     </a>
   </li>
@@ -523,7 +512,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../MySQL/%E5%8D%87%E7%BA%A7/" title="MySQL 升级" class="md-nav__link">
+    <a href="../../../MySQL/%E5%8D%87%E7%BA%A7/" title="MySQL 升级" class="md-nav__link">
       MySQL 升级
     </a>
   </li>
@@ -535,7 +524,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../MySQL/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" title="慢查询排查" class="md-nav__link">
+    <a href="../../../MySQL/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" title="慢查询排查" class="md-nav__link">
       慢查询排查
     </a>
   </li>
@@ -547,7 +536,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" title="数据库日志" class="md-nav__link">
+    <a href="../../../MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" title="数据库日志" class="md-nav__link">
       数据库日志
     </a>
   </li>
@@ -585,7 +574,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/" title="弹性伸缩" class="md-nav__link">
+    <a href="../../../PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/" title="弹性伸缩" class="md-nav__link">
       弹性伸缩
     </a>
   </li>
@@ -649,7 +638,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Software/Markdown/PicGo%20%2B%20GitHub%20%2B%20JSDeliver%20%2B%20Typora/" title="使用 Typecho + PicGo 进行图片上传" class="md-nav__link">
+    <a href="../../../../Software/Markdown/PicGo%20%2B%20GitHub%20%2B%20JSDeliver%20%2B%20Typora/" title="使用 Typecho + PicGo 进行图片上传" class="md-nav__link">
       使用 Typecho + PicGo 进行图片上传
     </a>
   </li>
@@ -690,41 +679,28 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    复现
+    依赖
   </a>
-  
-    <nav class="md-nav" aria-label="复现">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    额外引入的依赖
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sqlsessionfactory-bean-mybatis-plus" class="md-nav__link">
-    修改 sqlSessionFactory 的 bean 为 mybatis plus 提供
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nes-test" class="md-nav__link">
-    导入 nes 出问题的代码（test 包）
+  <a href="#_2" class="md-nav__link">
+    配置
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    期望的正常情况
+    其他
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    相关
   </a>
   
 </li>
@@ -745,107 +721,56 @@
                   
                 
                 
-                <div class="toc">
+                <h1 id="mybatis-plus-sql">Mybatis Plus 执行 SQL 打印</h1>
+<h2 id="_1">依赖</h2>
+<pre><code class="xml">&lt;!-- p6spy --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;p6spy&lt;/groupId&gt;
+    &lt;artifactId&gt;p6spy&lt;/artifactId&gt;
+    &lt;version&gt;3.9.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h2 id="_2">配置</h2>
+<pre><code class="yml">spring:
+  datasource:
+    username: bolitao
+    password: bolitao
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://127.0.0.1:3306/boliblog?useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai
+</code></pre>
+
+<h2 id="_3">其他</h2>
+<p><code>src/main/resources/spy.properties</code>:</p>
+<pre><code class="properties">#3.2.1以上使用
+modulelist=com.baomidou.mybatisplus.extension.p6spy.MybatisPlusLogFactory,com.p6spy.engine.outage.P6OutageFactory
+# 自定义日志打印
+logMessageFormat=com.baomidou.mybatisplus.extension.p6spy.P6SpyLogger
+#日志输出到控制台
+appender=com.baomidou.mybatisplus.extension.p6spy.StdoutLogger
+# 使用日志系统记录 sql
+#appender=com.p6spy.engine.spy.appender.Slf4JLogger
+# 设置 p6spy driver 代理
+deregisterdrivers=true
+# 取消JDBC URL前缀
+useprefix=true
+# 配置记录 Log 例外,可去掉的结果集有error,info,batch,debug,statement,commit,rollback,result,resultset.
+excludecategories=info,debug,result,commit,resultset
+# 日期格式
+dateformat=yyyy-MM-dd HH:mm:ss
+# 实际驱动可多个
+#driverlist=org.h2.Driver
+# 是否开启慢SQL记录
+outagedetection=true
+# 慢SQL记录标准 2 秒
+outagedetectioninterval=2
+</code></pre>
+
+<h2 id="_4">相关</h2>
 <ul>
-<li><a href="#tsf">TSF 异常、事务问题复现</a><ul>
-<li><a href="#_1">复现</a><ul>
-<li><a href="#_2">额外引入的依赖</a></li>
-<li><a href="#sqlsessionfactory-bean-mybatis-plus">修改 sqlSessionFactory 的 bean 为 mybatis plus 提供</a></li>
+<li><a href="https://github.com/bolitao/boliblog/commit/ca7acbb8c2642f8ff1650a5e9ce3bece7dbaf232">mybatis plus sql log · bolitao/boliblog@ca7acbb</a></li>
+<li><a href="https://baomidou.com/guide/p6spy.html">执行 SQL 分析打印 | MyBatis-Plus</a></li>
 </ul>
-</li>
-<li><a href="#nes-test">导入 nes 出问题的代码（test 包）</a></li>
-<li><a href="#_3">期望的正常情况</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<h1 id="tsf">TSF 异常、事务问题复现</h1>
-<p>表现为：</p>
-<ol>
-<li>不抛异常，代码能够接着走下去</li>
-<li>事务控制不生效</li>
-</ol>
-<h3 id="_1">复现</h3>
-<h4 id="_2">额外引入的依赖</h4>
-<pre><code class="xml">            &lt;dependency&gt;
-                &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
-                &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
-                &lt;version&gt;${mybatis-plus-boot-starter.version}&lt;/version&gt;
-            &lt;/dependency&gt;
-
-            &lt;dependency&gt;
-                &lt;groupId&gt;cn.hsa.powersi&lt;/groupId&gt;
-                &lt;artifactId&gt;hsa-powersi-base&lt;/artifactId&gt;
-                &lt;version&gt;${hsa-powersi-base.version}&lt;/version&gt;
-            &lt;/dependency&gt;
-</code></pre>
-
-<h4 id="sqlsessionfactory-bean-mybatis-plus">修改 <code>sqlSessionFactory</code> 的 bean 为 mybatis plus 提供</h4>
-<p>修改 biz 包下的 <code>db.xml</code> 文件：</p>
-<p>原始的：</p>
-<pre><code class="xml">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-</code></pre>
-
-<p>修改后：</p>
-<pre><code class="xml">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean&quot;&gt;
-
-    ...
-    &lt;bean class=&quot;cn.hsa.powersi.mybatisplus.plugins.BatchUpdateInterceptor&quot;&gt;
-                    &lt;description&gt;SQL批量更新拦截器&lt;/description&gt;
-    &lt;/bean&gt;
-    &lt;bean id=&quot;hsafGlobalConfig&quot; class=&quot;com.baomidou.mybatisplus.core.config.GlobalConfig&quot;&gt;
-        &lt;description&gt;SQL全局配置&lt;/description&gt;
-        &lt;property name=&quot;dbConfig&quot; ref=&quot;hsafDbConfig&quot;/&gt;
-        &lt;property name=&quot;sqlInjector&quot; ref=&quot;hsafLogicSqlInjector&quot;/&gt;
-    &lt;/bean&gt;
-    &lt;bean id=&quot;hsafDbConfig&quot;
-          class=&quot;com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig&quot;&gt;
-        &lt;description&gt;SQL全局数据库配置&lt;/description&gt;
-        &lt;property name=&quot;idType&quot; value=&quot;ASSIGN_UUID&quot;/&gt;
-        &lt;property name=&quot;logicDeleteValue&quot; value=&quot;0&quot;/&gt;
-        &lt;property name=&quot;logicNotDeleteValue&quot; value=&quot;1&quot;/&gt;
-    &lt;/bean&gt;
-    &lt;bean id=&quot;hsafLogicSqlInjector&quot;
-          class=&quot;cn.hsa.powersi.mybatisplus.injector.LogicSqlInjector&quot;&gt;
-        &lt;description&gt;SQL注入器&lt;/description&gt;
-    &lt;/bean&gt;
-</code></pre>
-
-<h3 id="nes-test">导入 nes 出问题的代码（test 包）</h3>
-<p>swagger 调用 <code>cn/hsa/mbs/nes/test</code> 接口，json 如下：</p>
-<pre><code class="json">[
-  {
-    &quot;id&quot;: 1,
-    &quot;status&quot;: 1,
-    &quot;username&quot;: &quot;string&quot;
-  },
-  {
-    &quot;id&quot;: 2,
-    &quot;status&quot;: 0,
-    &quot;username&quot;: &quot;AAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBlksakjwqhekjahdskjwqsadBBBBBBBBBBCCCCCCCCC&quot;
-  },
-  {
-    &quot;id&quot;: 3,
-    &quot;status&quot;: 0,
-    &quot;username&quot;: &quot;string&quot;
-  }
-]
-</code></pre>
-
-<p>未抛出异常：</p>
-<p><img alt="image-20201110205141691" src="TSF 异常、事务问题复现.assets/image-20201110205141691.png" /></p>
-<p>控制台无异常信息，bo 层后续代码被执行（红框标记）：</p>
-<p><img alt="image-20201110205234928" src="TSF 异常、事务问题复现.assets/image-20201110205234928.png" /></p>
-<p>数据被插入了（未被事务控制）：</p>
-<p><img alt="image-20201110205318192" src="TSF 异常、事务问题复现.assets/image-20201110205318192.png" /></p>
-<h3 id="_3">期望的正常情况</h3>
-<p>以开源环境为例，期望 TSF 能和开源环境运行效果一致。</p>
-<p>能够返回异常：</p>
-<p><img alt="image-20201110210501624" src="TSF 异常、事务问题复现.assets/image-20201110210501624.png" /></p>
-<p>能够输出异常信息：</p>
-<p><img alt="image-20201110210809929" src="TSF 异常、事务问题复现.assets/image-20201110210809929.png" /></p>
-<p>事务能够回滚（未插入新数据）：</p>
-<p><img alt="image-20201110210841956" src="TSF 异常、事务问题复现.assets/image-20201110210841956.png" /></p>
                 
               
               
@@ -864,7 +789,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../JavaTestArticle/" title="Test Article" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" title="TSF 异常、事务问题复现" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -873,19 +798,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Test Article
+                TSF 异常、事务问题复现
               </div>
             </div>
           </a>
         
         
-          <a href="../SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/" title="Mybatis Plus 执行 SQL 打印" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" title="跨域问题" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Mybatis Plus 执行 SQL 打印
+                跨域问题
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -929,15 +854,15 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "../../..",
+          base: "../../../..",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../../../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
