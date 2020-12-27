@@ -662,7 +662,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping(&quot;/**&quot;)
-                .allowedOrigins(&quot;*&quot;)
+                .allowedOriginPatterns(&quot;*&quot;)
                 .allowedMethods(&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;OPTIONS&quot;)
                 .allowCredentials(true)
                 .maxAge(3600)
