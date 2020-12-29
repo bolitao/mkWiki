@@ -3,7 +3,7 @@
 
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -66,7 +66,7 @@
       
         
         <a href="#tsf" class="md-skip">
-          Skip to content
+          跳转至
         </a>
       
     </div>
@@ -108,7 +108,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -355,7 +355,7 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
@@ -363,7 +363,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
@@ -676,7 +676,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
@@ -684,7 +684,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
@@ -759,78 +759,78 @@
 </li>
 </ul>
 </div>
-<h1 id="tsf">TSF 异常、事务问题复现</h1>
+<h1 id="tsf">TSF 异常、事务问题复现<a class="headerlink" href="#tsf" title="Permanent link">&para;</a></h1>
 <p>表现为：</p>
 <ol>
 <li>不抛异常，代码能够接着走下去</li>
 <li>事务控制不生效</li>
 </ol>
-<h3 id="_1">复现</h3>
-<h4 id="_2">额外引入的依赖</h4>
-<pre><code class="xml">            &lt;dependency&gt;
-                &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
-                &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
-                &lt;version&gt;${mybatis-plus-boot-starter.version}&lt;/version&gt;
-            &lt;/dependency&gt;
+<h3 id="_1">复现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">额外引入的依赖<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>com.baomidou<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>${mybatis-plus-boot-starter.version}<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
 
-            &lt;dependency&gt;
-                &lt;groupId&gt;cn.hsa.powersi&lt;/groupId&gt;
-                &lt;artifactId&gt;hsa-powersi-base&lt;/artifactId&gt;
-                &lt;version&gt;${hsa-powersi-base.version}&lt;/version&gt;
-            &lt;/dependency&gt;
-</code></pre>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>cn.hsa.powersi<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>hsa-powersi-base<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>${hsa-powersi-base.version}<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 
-<h4 id="sqlsessionfactory-bean-mybatis-plus">修改 <code>sqlSessionFactory</code> 的 bean 为 mybatis plus 提供</h4>
+<h4 id="sqlsessionfactory-bean-mybatis-plus">修改 <code>sqlSessionFactory</code> 的 bean 为 mybatis plus 提供<a class="headerlink" href="#sqlsessionfactory-bean-mybatis-plus" title="Permanent link">&para;</a></h4>
 <p>修改 biz 包下的 <code>db.xml</code> 文件：</p>
 <p>原始的：</p>
-<pre><code class="xml">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;sqlSessionFactory&quot;</span> <span class="na">class=</span><span class="s">&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
 <p>修改后：</p>
-<pre><code class="xml">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;sqlSessionFactory&quot;</span> <span class="na">class=</span><span class="s">&quot;com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean&quot;</span><span class="nt">&gt;</span>
 
     ...
-    &lt;bean class=&quot;cn.hsa.powersi.mybatisplus.plugins.BatchUpdateInterceptor&quot;&gt;
-                    &lt;description&gt;SQL批量更新拦截器&lt;/description&gt;
-    &lt;/bean&gt;
-    &lt;bean id=&quot;hsafGlobalConfig&quot; class=&quot;com.baomidou.mybatisplus.core.config.GlobalConfig&quot;&gt;
-        &lt;description&gt;SQL全局配置&lt;/description&gt;
-        &lt;property name=&quot;dbConfig&quot; ref=&quot;hsafDbConfig&quot;/&gt;
-        &lt;property name=&quot;sqlInjector&quot; ref=&quot;hsafLogicSqlInjector&quot;/&gt;
-    &lt;/bean&gt;
-    &lt;bean id=&quot;hsafDbConfig&quot;
-          class=&quot;com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig&quot;&gt;
-        &lt;description&gt;SQL全局数据库配置&lt;/description&gt;
-        &lt;property name=&quot;idType&quot; value=&quot;ASSIGN_UUID&quot;/&gt;
-        &lt;property name=&quot;logicDeleteValue&quot; value=&quot;0&quot;/&gt;
-        &lt;property name=&quot;logicNotDeleteValue&quot; value=&quot;1&quot;/&gt;
-    &lt;/bean&gt;
-    &lt;bean id=&quot;hsafLogicSqlInjector&quot;
-          class=&quot;cn.hsa.powersi.mybatisplus.injector.LogicSqlInjector&quot;&gt;
-        &lt;description&gt;SQL注入器&lt;/description&gt;
-    &lt;/bean&gt;
-</code></pre>
+    <span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;cn.hsa.powersi.mybatisplus.plugins.BatchUpdateInterceptor&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;description&gt;</span>SQL批量更新拦截器<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;hsafGlobalConfig&quot;</span> <span class="na">class=</span><span class="s">&quot;com.baomidou.mybatisplus.core.config.GlobalConfig&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;description&gt;</span>SQL全局配置<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;dbConfig&quot;</span> <span class="na">ref=</span><span class="s">&quot;hsafDbConfig&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;sqlInjector&quot;</span> <span class="na">ref=</span><span class="s">&quot;hsafLogicSqlInjector&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;hsafDbConfig&quot;</span>
+          <span class="na">class=</span><span class="s">&quot;com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;description&gt;</span>SQL全局数据库配置<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;idType&quot;</span> <span class="na">value=</span><span class="s">&quot;ASSIGN_UUID&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;logicDeleteValue&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;logicNotDeleteValue&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;hsafLogicSqlInjector&quot;</span>
+          <span class="na">class=</span><span class="s">&quot;cn.hsa.powersi.mybatisplus.injector.LogicSqlInjector&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;description&gt;</span>SQL注入器<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+</code></pre></div>
 
-<h3 id="nes-test">导入 nes 出问题的代码（test 包）</h3>
+<h3 id="nes-test">导入 nes 出问题的代码（test 包）<a class="headerlink" href="#nes-test" title="Permanent link">&para;</a></h3>
 <p>swagger 调用 <code>cn/hsa/mbs/nes/test</code> 接口，json 如下：</p>
-<pre><code class="json">[
-  {
-    &quot;id&quot;: 1,
-    &quot;status&quot;: 1,
-    &quot;username&quot;: &quot;string&quot;
-  },
-  {
-    &quot;id&quot;: 2,
-    &quot;status&quot;: 0,
-    &quot;username&quot;: &quot;AAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBlksakjwqhekjahdskjwqsadBBBBBBBBBBCCCCCCCCC&quot;
-  },
-  {
-    &quot;id&quot;: 3,
-    &quot;status&quot;: 0,
-    &quot;username&quot;: &quot;string&quot;
-  }
-]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBlksakjwqhekjahdskjwqsadBBBBBBBBBBCCCCCCCCC&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
 
 <p>未抛出异常：</p>
 <p><img alt="image-20201110205141691" src="TSF 异常、事务问题复现.assets/image-20201110205141691.png" /></p>
@@ -838,7 +838,7 @@
 <p><img alt="image-20201110205234928" src="TSF 异常、事务问题复现.assets/image-20201110205234928.png" /></p>
 <p>数据被插入了（未被事务控制）：</p>
 <p><img alt="image-20201110205318192" src="TSF 异常、事务问题复现.assets/image-20201110205318192.png" /></p>
-<h3 id="_3">期望的正常情况</h3>
+<h3 id="_3">期望的正常情况<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>以开源环境为例，期望 TSF 能和开源环境运行效果一致。</p>
 <p>能够返回异常：</p>
 <p><img alt="image-20201110210501624" src="TSF 异常、事务问题复现.assets/image-20201110210501624.png" /></p>
@@ -871,7 +871,7 @@
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Previous
+                  上一页
                 </span>
                 Test Article
               </div>
@@ -883,7 +883,7 @@
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  下一页
                 </span>
                 Mybatis Plus 执行 SQL 打印
               </div>
@@ -930,7 +930,7 @@
     </div>
     
       <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({

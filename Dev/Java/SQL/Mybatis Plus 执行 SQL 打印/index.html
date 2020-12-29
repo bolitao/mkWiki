@@ -3,7 +3,7 @@
 
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -66,7 +66,7 @@
       
         
         <a href="#mybatis-plus-sql" class="md-skip">
-          Skip to content
+          跳转至
         </a>
       
     </div>
@@ -108,7 +108,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -390,7 +390,7 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
@@ -398,7 +398,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
@@ -665,7 +665,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
@@ -673,7 +673,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
@@ -721,52 +721,52 @@
                   
                 
                 
-                <h1 id="mybatis-plus-sql">Mybatis Plus 执行 SQL 打印</h1>
-<h2 id="_1">依赖</h2>
-<pre><code class="xml">&lt;!-- p6spy --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;p6spy&lt;/groupId&gt;
-    &lt;artifactId&gt;p6spy&lt;/artifactId&gt;
-    &lt;version&gt;3.9.1&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+                <h1 id="mybatis-plus-sql">Mybatis Plus 执行 SQL 打印<a class="headerlink" href="#mybatis-plus-sql" title="Permanent link">&para;</a></h1>
+<h2 id="_1">依赖<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c">&lt;!-- p6spy --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>p6spy<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>p6spy<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.9.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
 
-<h2 id="_2">配置</h2>
-<pre><code class="yml">spring:
+<h2 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>spring:
   datasource:
     username: bolitao
     password: bolitao
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     url: jdbc:p6spy:mysql://127.0.0.1:3306/boliblog?useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai
-</code></pre>
+</code></pre></div>
 
-<h2 id="_3">其他</h2>
+<h2 id="_3">其他<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><code>src/main/resources/spy.properties</code>:</p>
-<pre><code class="properties">#3.2.1以上使用
-modulelist=com.baomidou.mybatisplus.extension.p6spy.MybatisPlusLogFactory,com.p6spy.engine.outage.P6OutageFactory
-# 自定义日志打印
-logMessageFormat=com.baomidou.mybatisplus.extension.p6spy.P6SpyLogger
-#日志输出到控制台
-appender=com.baomidou.mybatisplus.extension.p6spy.StdoutLogger
-# 使用日志系统记录 sql
-#appender=com.p6spy.engine.spy.appender.Slf4JLogger
-# 设置 p6spy driver 代理
-deregisterdrivers=true
-# 取消JDBC URL前缀
-useprefix=true
-# 配置记录 Log 例外,可去掉的结果集有error,info,batch,debug,statement,commit,rollback,result,resultset.
-excludecategories=info,debug,result,commit,resultset
-# 日期格式
-dateformat=yyyy-MM-dd HH:mm:ss
-# 实际驱动可多个
-#driverlist=org.h2.Driver
-# 是否开启慢SQL记录
-outagedetection=true
-# 慢SQL记录标准 2 秒
-outagedetectioninterval=2
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c">#3.2.1以上使用</span>
+<span class="na">modulelist</span><span class="o">=</span><span class="s">com.baomidou.mybatisplus.extension.p6spy.MybatisPlusLogFactory,com.p6spy.engine.outage.P6OutageFactory</span>
+<span class="c"># 自定义日志打印</span>
+<span class="na">logMessageFormat</span><span class="o">=</span><span class="s">com.baomidou.mybatisplus.extension.p6spy.P6SpyLogger</span>
+<span class="c">#日志输出到控制台</span>
+<span class="na">appender</span><span class="o">=</span><span class="s">com.baomidou.mybatisplus.extension.p6spy.StdoutLogger</span>
+<span class="c"># 使用日志系统记录 sql</span>
+<span class="c">#appender=com.p6spy.engine.spy.appender.Slf4JLogger</span>
+<span class="c"># 设置 p6spy driver 代理</span>
+<span class="na">deregisterdrivers</span><span class="o">=</span><span class="s">true</span>
+<span class="c"># 取消JDBC URL前缀</span>
+<span class="na">useprefix</span><span class="o">=</span><span class="s">true</span>
+<span class="c"># 配置记录 Log 例外,可去掉的结果集有error,info,batch,debug,statement,commit,rollback,result,resultset.</span>
+<span class="na">excludecategories</span><span class="o">=</span><span class="s">info,debug,result,commit,resultset</span>
+<span class="c"># 日期格式</span>
+<span class="na">dateformat</span><span class="o">=</span><span class="s">yyyy-MM-dd HH:mm:ss</span>
+<span class="c"># 实际驱动可多个</span>
+<span class="c">#driverlist=org.h2.Driver</span>
+<span class="c"># 是否开启慢SQL记录</span>
+<span class="na">outagedetection</span><span class="o">=</span><span class="s">true</span>
+<span class="c"># 慢SQL记录标准 2 秒</span>
+<span class="na">outagedetectioninterval</span><span class="o">=</span><span class="s">2</span>
+</code></pre></div>
 
-<h2 id="_4">相关</h2>
+<h2 id="_4">相关<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/bolitao/boliblog/commit/ca7acbb8c2642f8ff1650a5e9ce3bece7dbaf232">mybatis plus sql log · bolitao/boliblog@ca7acbb</a></li>
 <li><a href="https://baomidou.com/guide/p6spy.html">执行 SQL 分析打印 | MyBatis-Plus</a></li>
@@ -796,7 +796,7 @@ outagedetectioninterval=2
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Previous
+                  上一页
                 </span>
                 TSF 异常、事务问题复现
               </div>
@@ -808,7 +808,7 @@ outagedetectioninterval=2
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  下一页
                 </span>
                 跨域问题
               </div>
@@ -855,7 +855,7 @@ outagedetectioninterval=2
     </div>
     
       <script src="../../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({

@@ -3,7 +3,7 @@
 
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -66,7 +66,7 @@
       
         
         <a href="#_1" class="md-skip">
-          Skip to content
+          跳转至
         </a>
       
     </div>
@@ -108,7 +108,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -613,7 +613,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
@@ -633,15 +633,15 @@
                   
                 
                 
-                <h1 id="_1">慢查询排查</h1>
-<pre><code class="sql">select id, db, user, host, command, time, state, info  FROM information_schema.processlist WHERE command!=&quot;Sleep&quot; order by time desc;
-</code></pre>
+                <h1 id="_1">慢查询排查<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">id</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="k">user</span><span class="p">,</span> <span class="k">host</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="k">time</span><span class="p">,</span> <span class="k">state</span><span class="p">,</span> <span class="n">info</span>  <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">processlist</span> <span class="k">WHERE</span> <span class="n">command</span><span class="o">!=</span><span class="ss">&quot;Sleep&quot;</span> <span class="k">order</span> <span class="k">by</span> <span class="k">time</span> <span class="k">desc</span><span class="p">;</span>
+</code></pre></div>
 
-<pre><code class="shell">/mysql/service/mysql-5.7.28/bin/mysql -u root -p'root$123' -e'select id, db, user, host, command, time, state, info  FROM information_schema.processlist WHERE command!=&quot;Sleep&quot; order by time desc\G' &gt; /tmp/20200923-SlowQuery.txt
-</code></pre>
+<div class="highlight"><pre><span></span><code>/mysql/service/mysql-5.7.28/bin/mysql -u root -p<span class="s1">&#39;root$123&#39;</span> -e<span class="s1">&#39;select id, db, user, host, command, time, state, info  FROM information_schema.processlist WHERE command!=&quot;Sleep&quot; order by time desc\G&#39;</span> &gt; /tmp/20200923-SlowQuery.txt
+</code></pre></div>
 
-<pre><code class="sql">select concat('kill ', id, ';')  from information_schema.processlist where command != 'Sleep' and time &gt; 10*60 and user='gzsz' order by time desc;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="s1">&#39;kill &#39;</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>  <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">processlist</span> <span class="k">where</span> <span class="n">command</span> <span class="o">!=</span> <span class="s1">&#39;Sleep&#39;</span> <span class="k">and</span> <span class="k">time</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">*</span><span class="mi">60</span> <span class="k">and</span> <span class="k">user</span><span class="o">=</span><span class="s1">&#39;gzsz&#39;</span> <span class="k">order</span> <span class="k">by</span> <span class="k">time</span> <span class="k">desc</span><span class="p">;</span>
+</code></pre></div>
 
 <hr />
 <p>1、查询是否锁表
@@ -696,7 +696,7 @@ show OPEN TABLES where In_use &gt; 0; 这个语句记录当前锁表状态
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Previous
+                  上一页
                 </span>
                 MySQL 升级
               </div>
@@ -708,7 +708,7 @@ show OPEN TABLES where In_use &gt; 0; 这个语句记录当前锁表状态
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  下一页
                 </span>
                 数据库日志
               </div>
@@ -755,7 +755,7 @@ show OPEN TABLES where In_use &gt; 0; 这个语句记录当前锁表状态
     </div>
     
       <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
