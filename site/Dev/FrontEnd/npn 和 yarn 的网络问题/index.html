@@ -3,7 +3,7 @@
 
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -66,7 +66,7 @@
       
         
         <a href="#npn-yarn" class="md-skip">
-          Skip to content
+          跳转至
         </a>
       
     </div>
@@ -108,7 +108,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -400,11 +400,49 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-4" type="checkbox" id="nav-3-3-4">
     
     <label class="md-nav__link" for="nav-3-3-4">
+      Nacos
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Nacos" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-4">
+        <span class="md-nav__icon md-icon"></span>
+        Nacos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Java/nacos/rec/" title="Rec" class="md-nav__link">
+      Rec
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-5" type="checkbox" id="nav-3-3-5">
+    
+    <label class="md-nav__link" for="nav-3-3-5">
       安全
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="安全" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-3-4">
+      <label class="md-nav__title" for="nav-3-3-5">
         <span class="md-nav__icon md-icon"></span>
         安全
       </label>
@@ -613,7 +651,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
@@ -633,9 +671,9 @@
                   
                 
                 
-                <h1 id="npn-yarn">npn 和 yarn 的网络问题</h1>
+                <h1 id="npn-yarn">npn 和 yarn 的网络问题<a class="headerlink" href="#npn-yarn" title="Permanent link">&para;</a></h1>
 <p><code>.npmrc</code>:</p>
-<pre><code class="npmrc">proxy=http://127.0.0.1:10809
+<div class="highlight"><pre><span></span><code>proxy=http://127.0.0.1:10809
 sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
 registry=https://registry.npm.taobao.org
 phantomjs_cdnurl=http://cnpmjs.org/downloads
@@ -643,17 +681,17 @@ electron_mirror=https://npm.taobao.org/mirrors/electron/
 sqlite3_binary_host_mirror=https://foxgis.oss-cn-shanghai.aliyuncs.com/
 profiler_binary_host_mirror=https://npm.taobao.org/mirrors/node-inspector/
 chromedriver_cdnurl=https://cdn.npm.taobao.org/dist/chromedriver
-</code></pre>
+</code></pre></div>
 
 <p><code>.yarnrc</code>:</p>
-<pre><code class="yarnrc">registry &quot;https://registry.npm.taobao.org&quot;
+<div class="highlight"><pre><span></span><code>registry &quot;https://registry.npm.taobao.org&quot;
 sass_binary_site &quot;https://npm.taobao.org/mirrors/node-sass/&quot;
 phantomjs_cdnurl &quot;http://cnpmjs.org/downloads&quot;
 electron_mirror &quot;https://npm.taobao.org/mirrors/electron/&quot;
 sqlite3_binary_host_mirror &quot;https://foxgis.oss-cn-shanghai.aliyuncs.com/&quot;
 profiler_binary_host_mirror &quot;https://npm.taobao.org/mirrors/node-inspector/&quot;
 chromedriver_cdnurl &quot;https://cdn.npm.taobao.org/dist/chromedriver&quot;
-</code></pre>
+</code></pre></div>
                 
               
               
@@ -679,7 +717,7 @@ chromedriver_cdnurl &quot;https://cdn.npm.taobao.org/dist/chromedriver&quot;
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Previous
+                  上一页
                 </span>
                 Nuxt, Vuetify Start
               </div>
@@ -691,7 +729,7 @@ chromedriver_cdnurl &quot;https://cdn.npm.taobao.org/dist/chromedriver&quot;
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  下一页
                 </span>
                 Test Article
               </div>
@@ -738,7 +776,7 @@ chromedriver_cdnurl &quot;https://cdn.npm.taobao.org/dist/chromedriver&quot;
     </div>
     
       <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
