@@ -79,8 +79,8 @@ restart:
 
 ``` shell
 sudo systemctl daemon-reload
-sudo systemctl restart docker
 sudo systemctl show --property=Environment docker # check
+sudo systemctl restart docker
 ```
 
 > ref: [Control Docker with systemd | Docker Documentation](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
