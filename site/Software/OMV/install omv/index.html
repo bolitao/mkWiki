@@ -837,8 +837,8 @@ Environment=&quot;NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp
 
 <p>restart:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload
-sudo systemctl restart docker
 sudo systemctl show --property<span class="o">=</span>Environment docker <span class="c1"># check</span>
+sudo systemctl restart docker
 </code></pre></div>
 
 <blockquote>
