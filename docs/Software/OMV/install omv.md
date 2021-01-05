@@ -42,7 +42,7 @@ install (may use a proxy):
 wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash 
 ```
 
-ref: [omv-extras.org](https://omv-extras.org/)
+> ref: [omv-extras.org](https://omv-extras.org/)
 
 mirrors:
 
