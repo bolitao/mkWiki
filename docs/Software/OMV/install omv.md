@@ -55,3 +55,32 @@ deb http://linux.teamviewer.com/deb stable main
 deb https://mirrors.bfsu.edu.cn/OpenMediaVault/openmediavault-plugin-developers/usul-testing buster main
 deb https://mirrors.bfsu.edu.cn/OpenMediaVault/openmediavault-plugin-developers/usul-extras buster main
 ```
+
+## docker proxy
+
+``` shell
+sudo mkdir -p /etc/systemd/system/docker.service.d
+```
+
+``` shell
+sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
+```
+
+content:
+
+``` conf
+[Service]
+Environment="HTTP_PROXY=http://192.168.79.1:10809"
+Environment="HTTPS_PROXY=http://192.168.79.1:10809"
+Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
+```
+
+restart:
+
+``` shell
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl show --property=Environment docker # check
+```
+
+> ref: [Control Docker with systemd | Docker Documentation](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
