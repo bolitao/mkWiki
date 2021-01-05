@@ -693,6 +693,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#docker-proxy" class="md-nav__link">
+    docker proxy
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -741,6 +748,13 @@
         <li class="md-nav__item">
   <a href="#omv-extras" class="md-nav__link">
     omv extras
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-proxy" class="md-nav__link">
+    docker proxy
   </a>
   
 </li>
@@ -806,6 +820,30 @@ deb http://linux.teamviewer.com/deb stable main
 deb https://mirrors.bfsu.edu.cn/OpenMediaVault/openmediavault-plugin-developers/usul-testing buster main
 deb https://mirrors.bfsu.edu.cn/OpenMediaVault/openmediavault-plugin-developers/usul-extras buster main
 </code></pre></div>
+
+<h2 id="docker-proxy">docker proxy<a class="headerlink" href="#docker-proxy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo mkdir -p /etc/systemd/system/docker.service.d
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
+</code></pre></div>
+
+<p>content:</p>
+<div class="highlight"><pre><span></span><code>[Service]
+Environment=&quot;HTTP_PROXY=http://192.168.79.1:10809&quot;
+Environment=&quot;HTTPS_PROXY=http://192.168.79.1:10809&quot;
+Environment=&quot;NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp&quot;
+</code></pre></div>
+
+<p>restart:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl show --property<span class="o">=</span>Environment docker <span class="c1"># check</span>
+</code></pre></div>
+
+<blockquote>
+<p>ref: <a href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">Control Docker with systemd | Docker Documentation</a></p>
+</blockquote>
                 
               
               
