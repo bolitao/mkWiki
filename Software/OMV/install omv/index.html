@@ -290,6 +290,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../Dev/Docker/compose%20conf/netdata/" title="Netdata" class="md-nav__link">
+      Netdata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../Dev/Docker/compose%20conf/nginx/" title="Nginx" class="md-nav__link">
       Nginx
     </a>
@@ -857,6 +869,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vs-code-ssh" class="md-nav__link">
+    VS Code SSH
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -975,6 +994,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vs-code-ssh" class="md-nav__link">
+    VS Code SSH
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1079,6 +1105,14 @@ cat ~/.ssh/authorized_keys
 
 <h2 id="gnupg">gnupg<a class="headerlink" href="#gnupg" title="Permanent link">&para;</a></h2>
 <p>just copy, then set permission to <code>600</code> or <code>700</code>.</p>
+<h2 id="vs-code-ssh">VS Code SSH<a class="headerlink" href="#vs-code-ssh" title="Permanent link">&para;</a></h2>
+<p>error:</p>
+<div class="highlight"><pre><span></span><code>open failed: administratively prohibited: open failed
+</code></pre></div>
+
+<p>change <code>AllowTcpForwarding</code> to <code>yes</code>:</p>
+<div class="highlight"><pre><span></span><code>AllowTcpForwarding yes
+</code></pre></div>
                 
               
               
