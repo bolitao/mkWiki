@@ -64,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#redis-conf" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -333,9 +338,36 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Redis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" title="Redis" class="md-nav__link md-nav__link--active">
       Redis
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-conf" class="md-nav__link">
+    redis conf
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -816,6 +848,34 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#redis-conf" class="md-nav__link">
+    redis conf
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -833,13 +893,31 @@ services:
     image: redis
     container_name: docker_redis
     volumes:
+      - /data/redis/redisconf/redis.conf:/usr/local/etc/redis/redis.conf
       - /data/redis/datadir:/data/
-      - /data/redis/redisconf:/usr/local/etc/redis/
       - /data/redis/logs:/logs/
-    # command:
-    #   - redis-server /usr/local/etc/redis/redis.conf
+    command:
+      - /usr/local/etc/redis/redis.conf
     ports:
       - 6379:6379
+    restart: always
+</code></pre></div>
+
+<h2 id="redis-conf">redis conf<a class="headerlink" href="#redis-conf" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>nano /data/redis/redisconf/redis.conf
+</code></pre></div>
+
+<p>conteng:</p>
+<div class="highlight"><pre><span></span><code>requirepass bolitao
+
+save 900 1
+save 300 10
+save 60 1000
+
+appendonly yes
+appendfsync everysec
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
 </code></pre></div>
 
 <p>TODO:</p>
