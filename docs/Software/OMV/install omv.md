@@ -84,3 +84,28 @@ sudo systemctl restart docker
 ```
 
 > ref: [Control Docker with systemd | Docker Documentation](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
+
+## VMware linux tools
+
+``` shell
+mkdir /mnt/cdrom
+mount /path/to/iso /mnt/cdrom
+apt install make gcc g++ cmake
+cp /mnt/cdrom/VMwareTools-10.3.22-15902021.tar.gz . # copy archive file to current path
+umount /mnt/cdrom
+tar -xzvf VMwareTools-10.3.22-15902021.tar.gz
+apt install make gcc g++ cmake
+./vmware-install.pl
+```
+
+## ssh key login
+
+``` shell
+cp /mnt/hgfs/C/Users/username/.ssh/id_rsa.pub ~/.ssh # copy ssh pub from host
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+cat ~/.ssh/authorized_keys
+```
+
+## gnupg
+
+just copy, then set permission to `600` or `700`.
