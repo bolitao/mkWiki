@@ -16,6 +16,7 @@ services:
         ports:
             - 5672:5672
             - 15672:15672
+        restart: always
 ```
 
 ## 无法启动
