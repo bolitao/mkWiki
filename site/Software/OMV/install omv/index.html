@@ -700,6 +700,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vmware-linux-tools" class="md-nav__link">
+    VMware linux tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-key-login" class="md-nav__link">
+    ssh key login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnupg" class="md-nav__link">
+    gnupg
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -755,6 +776,27 @@
         <li class="md-nav__item">
   <a href="#docker-proxy" class="md-nav__link">
     docker proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmware-linux-tools" class="md-nav__link">
+    VMware linux tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-key-login" class="md-nav__link">
+    ssh key login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gnupg" class="md-nav__link">
+    gnupg
   </a>
   
 </li>
@@ -844,6 +886,25 @@ sudo systemctl restart docker
 <blockquote>
 <p>ref: <a href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">Control Docker with systemd | Docker Documentation</a></p>
 </blockquote>
+<h2 id="vmware-linux-tools">VMware linux tools<a class="headerlink" href="#vmware-linux-tools" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>mkdir /mnt/cdrom
+mount /path/to/iso /mnt/cdrom
+apt install make gcc g++ cmake
+cp /mnt/cdrom/VMwareTools-10.3.22-15902021.tar.gz . <span class="c1"># copy archive file to current path</span>
+umount /mnt/cdrom
+tar -xzvf VMwareTools-10.3.22-15902021.tar.gz
+apt install make gcc g++ cmake
+./vmware-install.pl
+</code></pre></div>
+
+<h2 id="ssh-key-login">ssh key login<a class="headerlink" href="#ssh-key-login" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>cp /mnt/hgfs/C/Users/username/.ssh/id_rsa.pub ~/.ssh <span class="c1"># copy ssh pub from host</span>
+cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+cat ~/.ssh/authorized_keys
+</code></pre></div>
+
+<h2 id="gnupg">gnupg<a class="headerlink" href="#gnupg" title="Permanent link">&para;</a></h2>
+<p>just copy, then set permission to <code>600</code> or <code>700</code>.</p>
                 
               
               
