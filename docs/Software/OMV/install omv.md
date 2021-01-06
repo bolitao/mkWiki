@@ -109,3 +109,17 @@ cat ~/.ssh/authorized_keys
 ## gnupg
 
 just copy, then set permission to `600` or `700`.
+
+## VS Code SSH
+
+error:
+
+``` log
+open failed: administratively prohibited: open failed
+```
+
+change `AllowTcpForwarding` to `yes`:
+
+``` shell
+AllowTcpForwarding yes
+```
