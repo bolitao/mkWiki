@@ -118,7 +118,7 @@ error:
 open failed: administratively prohibited: open failed
 ```
 
-change `AllowTcpForwarding` to `yes`:
+change SSH config `AllowTcpForwarding` to `yes`:
 
 ``` shell
 AllowTcpForwarding yes
