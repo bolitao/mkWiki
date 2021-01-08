@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://wiki.bolitao.xyz/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/about/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/mongo/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/mysql/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/netdata/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/nginx/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/postgres/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/rabbitmq/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Docker/compose%20conf/redis/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/FrontEnd/Nuxt%2C%20Vuetify%20Start/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Java/JavaTestArticle/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Java/SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Java/nacos/rec/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/Java/%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/MySQL/%E5%8D%87%E7%BA%A7/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/MySQL/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Dev/PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Software/Browser/Fuck%20chrome%20extension%20toolbar/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Software/Markdown/PicGo%20%2B%20GitHub%20%2B%20JSDeliver%20%2B%20Typora/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Software/OMV/install%20omv/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://wiki.bolitao.xyz/Software/VM/VMware%20Workstation%20%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-     <lastmod>2021-01-06</lastmod>
+     <lastmod>2021-01-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
