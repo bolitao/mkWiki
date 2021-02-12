@@ -1,7 +1,4 @@
 
-
-
-
 <!doctype html>
 <html lang="zh" class="no-js">
   <head>
@@ -12,13 +9,14 @@
         <meta name="description" content="Boli's notes and drafts">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/MySQL/%E5%8D%87%E7%BA%A7/">
-      
       
         <meta name="author" content="Boli Tao">
       
+      
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/MySQL/%E5%8D%87%E7%BA%A7/">
+      
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
@@ -26,20 +24,22 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d3202873.min.css">
-      
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ff0a5ce4.min.css">
-      
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
         
-        <meta name="theme-color" content="#7e56c2">
+          
+          
+          <meta name="theme-color" content="#7e56c2">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,400,400i,700%7CJetbrains+Mono&display=fallback">
         <style>body,input{font-family:"Noto Serif SC",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Jetbrains Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -56,7 +56,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="blue">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,7 +77,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://wiki.bolitao.xyz" title="Tiki" class="md-header-nav__button md-logo" aria-label="Tiki">
       
@@ -86,18 +91,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             Tiki
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               MySQL 升级
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -108,7 +115,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -121,7 +128,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -136,8 +143,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -145,10 +150,16 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://wiki.bolitao.xyz" title="Tiki" class="md-nav__button md-logo" aria-label="Tiki">
       
@@ -165,24 +176,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
 
     
       
@@ -190,433 +192,506 @@
       
 
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
 
+    
+      
+      
+      
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-3">
-      Dev
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Dev" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
         Dev
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
-    
-    <label class="md-nav__link" for="nav-3-1">
-      Docker
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Docker" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Dev" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Dev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+      
+      <label class="md-nav__link" for="nav-3-1">
         Docker
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Windows Docker 代理设置" class="md-nav__link">
-      Windows Docker 代理设置
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-2" type="checkbox" id="nav-3-1-2">
-    
-    <label class="md-nav__link" for="nav-3-1-2">
-      Compose conf
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Compose conf" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-2">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-1">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+        Windows Docker 代理设置
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-2" type="checkbox" id="nav-3-1-2" >
+      
+      <label class="md-nav__link" for="nav-3-1-2">
         Compose conf
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/mongo/" title="Mongo" class="md-nav__link">
-      Mongo
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/mysql/" title="Mysql" class="md-nav__link">
-      Mysql
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/netdata/" title="Netdata" class="md-nav__link">
-      Netdata
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/nginx/" title="Nginx" class="md-nav__link">
-      Nginx
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/postgres/" title="Postgres" class="md-nav__link">
-      Postgres
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/rabbitmq/" title="Rabbitmq" class="md-nav__link">
-      Rabbitmq
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Docker/compose%20conf/redis/" title="Redis" class="md-nav__link">
-      Redis
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
-    
-    <label class="md-nav__link" for="nav-3-2">
-      FrontEnd
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="FrontEnd" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Compose conf" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-1-2">
+          <span class="md-nav__icon md-icon"></span>
+          Compose conf
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/mongo/" class="md-nav__link">
+        Mongo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/mysql/" class="md-nav__link">
+        Mysql
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/netdata/" class="md-nav__link">
+        Netdata
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/nginx/" class="md-nav__link">
+        Nginx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/postgres/" class="md-nav__link">
+        Postgres
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/rabbitmq/" class="md-nav__link">
+        Rabbitmq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/compose%20conf/redis/" class="md-nav__link">
+        Redis
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
         FrontEnd
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" title="Nuxt, Vuetify Start" class="md-nav__link">
-      Nuxt, Vuetify Start
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" title="npn 和 yarn 的网络问题" class="md-nav__link">
-      npn 和 yarn 的网络问题
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
-    
-    <label class="md-nav__link" for="nav-3-3">
-      Java
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Java" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FrontEnd" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          FrontEnd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" class="md-nav__link">
+        Nuxt, Vuetify Start
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        npn 和 yarn 的网络问题
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/gpg/" class="md-nav__link">
+        tell git using gpg sign key
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+      
+      <label class="md-nav__link" for="nav-3-4">
         Java
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Java/JavaTestArticle/" title="Test Article" class="md-nav__link">
-      Test Article
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" title="TSF 异常、事务问题复现" class="md-nav__link">
-      TSF 异常、事务问题复现
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3">
-    
-    <label class="md-nav__link" for="nav-3-3-3">
-      SQL
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="SQL" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-3-3">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java/JavaTestArticle/" class="md-nav__link">
+        Test Article
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-nav__link">
+        TSF 异常、事务问题复现
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3" >
+      
+      <label class="md-nav__link" for="nav-3-4-3">
         SQL
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Java/SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/" title="Mybatis Plus 执行 SQL 打印" class="md-nav__link">
-      Mybatis Plus 执行 SQL 打印
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-4" type="checkbox" id="nav-3-3-4">
-    
-    <label class="md-nav__link" for="nav-3-3-4">
-      Nacos
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Nacos" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-3-4">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="SQL" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          SQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java/SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/" class="md-nav__link">
+        Mybatis Plus 执行 SQL 打印
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-4" type="checkbox" id="nav-3-4-4" >
+      
+      <label class="md-nav__link" for="nav-3-4-4">
         Nacos
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Java/nacos/rec/" title="Rec" class="md-nav__link">
-      Rec
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-5" type="checkbox" id="nav-3-3-5">
-    
-    <label class="md-nav__link" for="nav-3-3-5">
-      安全
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="安全" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-3-5">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Nacos" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-4">
+          <span class="md-nav__icon md-icon"></span>
+          Nacos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java/nacos/rec/" class="md-nav__link">
+        Rec
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-5" type="checkbox" id="nav-3-4-5" >
+      
+      <label class="md-nav__link" for="nav-3-4-5">
         安全
+        <span class="md-nav__icon md-icon"></span>
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="安全" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-5">
+          <span class="md-nav__icon md-icon"></span>
+          安全
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Java/%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" title="跨域问题" class="md-nav__link">
-      跨域问题
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Java/%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" class="md-nav__link">
+        跨域问题
+      </a>
+    </li>
   
 
+          
+        </ul>
+      </nav>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+  
+  
     
-    <label class="md-nav__link" for="nav-3-4">
-      MySQL
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="MySQL" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-4">
-        <span class="md-nav__icon md-icon"></span>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" checked>
+      
+      <label class="md-nav__link" for="nav-3-5">
         MySQL
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        MySQL 升级
         <span class="md-nav__icon md-icon"></span>
       </label>
+      <nav class="md-nav" aria-label="MySQL" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-5">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
     
-    <a href="./" title="MySQL 升级" class="md-nav__link md-nav__link--active">
-      MySQL 升级
-    </a>
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MySQL 升级
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        MySQL 升级
+      </a>
+      
+        
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -743,258 +818,276 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-nav__link">
+        慢查询排查
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" class="md-nav__link">
+        数据库日志
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" title="慢查询排查" class="md-nav__link">
-      慢查询排查
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" title="数据库日志" class="md-nav__link">
-      数据库日志
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
-    
-    <label class="md-nav__link" for="nav-3-5">
-      PaaS
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="PaaS" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-5">
-        <span class="md-nav__icon md-icon"></span>
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6" >
+      
+      <label class="md-nav__link" for="nav-3-6">
         PaaS
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/" title="弹性伸缩" class="md-nav__link">
-      弹性伸缩
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Software
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Software" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PaaS" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-6">
+          <span class="md-nav__icon md-icon"></span>
+          PaaS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/" class="md-nav__link">
+        弹性伸缩
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
         Software
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
-    
-    <label class="md-nav__link" for="nav-4-1">
-      Browser
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Browser" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-1">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" >
+      
+      <label class="md-nav__link" for="nav-4-1">
         Browser
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Software/Browser/Fuck%20chrome%20extension%20toolbar/" title="Fuck chrome extension toolbar" class="md-nav__link">
-      Fuck chrome extension toolbar
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
-    
-    <label class="md-nav__link" for="nav-4-2">
-      Markdown
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Markdown" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Browser" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-1">
+          <span class="md-nav__icon md-icon"></span>
+          Browser
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/Browser/Fuck%20chrome%20extension%20toolbar/" class="md-nav__link">
+        Fuck chrome extension toolbar
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+      
+      <label class="md-nav__link" for="nav-4-2">
         Markdown
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Software/Markdown/PicGo%20%2B%20GitHub%20%2B%20JSDeliver%20%2B%20Typora/" title="使用 Typecho + PicGo 进行图片上传" class="md-nav__link">
-      使用 Typecho + PicGo 进行图片上传
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      OMV
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="OMV" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
         <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Markdown" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Markdown
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/Markdown/PicGo%20%2B%20GitHub%20%2B%20JSDeliver%20%2B%20Typora/" class="md-nav__link">
+        使用 Typecho + PicGo 进行图片上传
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+      
+      <label class="md-nav__link" for="nav-4-3">
         OMV
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Software/OMV/install%20omv/" title="Install omv" class="md-nav__link">
-      Install omv
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
-    
-    <label class="md-nav__link" for="nav-4-4">
-      VM
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="VM" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-4">
         <span class="md-nav__icon md-icon"></span>
-        VM
       </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      <nav class="md-nav" aria-label="OMV" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          OMV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/OMV/install%20omv/" class="md-nav__link">
+        Install omv
+      </a>
+    </li>
+  
+
           
+        </ul>
+      </nav>
+    </li>
+  
 
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
+      
+      <label class="md-nav__link" for="nav-4-4">
+        VM
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="VM" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-4">
+          <span class="md-nav__icon md-icon"></span>
+          VM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/VM/VMware%20Workstation%20%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="md-nav__link">
+        VMware Workstation 开机启动虚拟机
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../../Software/VM/VMware%20Workstation%20%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%99%9A%E6%8B%9F%E6%9C%BA/" title="VMware Workstation 开机启动虚拟机" class="md-nav__link">
-      VMware Workstation 开机启动虚拟机
-    </a>
-  </li>
+          
+        </ul>
+      </nav>
+    </li>
+  
 
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -1004,7 +1097,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1144,20 +1238,15 @@
               
                 
                 
-                  
-                
-                
                 <h1 id="mysql">MySQL 升级<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h1>
 <p>虽然我非常反对手动编译或使用 generic 二进制文件安装 Linux 软件包，但我们公司的运维组似乎十分热衷于此，好巧不巧我在运维组工作过几天，接手了升级 MySQL 的活，于是记录一下使用二进制包升级 MySQL 的操作。</p>
 <h2 id="1-mysql">1. MySQL 安装包准备<a class="headerlink" href="#1-mysql" title="Permanent link">&para;</a></h2>
 <p>软件压缩包名：</p>
 <div class="highlight"><pre><span></span><code>mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
 </code></pre></div>
-
 <p>从 FTP 服务器下载（或随便其他方式拿到二进制包）：</p>
 <div class="highlight"><pre><span></span><code>wget -P /mysql/ http://ip:port/path/to/ftp_dir/mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
 </code></pre></div>
-
 <h2 id="2">2. 数据库服务器确认<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>测试环境服务器：见 Excel 表格</li>
@@ -1167,67 +1256,55 @@
 <p>创建备份文件夹：</p>
 <div class="highlight"><pre><span></span><code>mkdir /mysql/dbbackup
 </code></pre></div>
-
 <p>备份 MySQL 库：</p>
 <div class="highlight"><pre><span></span><code>mysqldump -uroot -p<span class="s1">&#39;mysql_password&#39;</span> --master-data<span class="o">=</span><span class="m">2</span> -c db_name &gt; /mysql/dbbackup/db_name_20200909.sql
 </code></pre></div>
-
 <h2 id="4">4. 升级前准备<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p><strong>先升级从，再升级主。</strong></p>
 <h3 id="41-keepalived">4.1 关闭 keepalived<a class="headerlink" href="#41-keepalived" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>service keepalived stop
 </code></pre></div>
-
 <h3 id="42-mysql">4.2 关闭 MySQL<a class="headerlink" href="#42-mysql" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>su - //切换到超级用户
 service mysql stop
 </code></pre></div>
-
 <h3 id="43-binlog">4.3 备份 binlog<a class="headerlink" href="#43-binlog" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>mkdir /mysql/log_20200909_bak <span class="o">&amp;&amp;</span> cp -pr /mysql/log/* /mysql/log_20200908_bak
 </code></pre></div>
-
 <h2 id="5">5. 正式升级<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <ol>
 <li>解压、修改目录名、赋权：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>tar -xvf /mysql/mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz -C /mysql/service/ <span class="o">&amp;&amp;</span> mv /mysql/service/mysql-5.7.31-linux-glibc2.12-x86_64/ /mysql/service/mysql-5.7.31/ <span class="o">&amp;&amp;</span> chown -R mysql.mysql /mysql/service/mysql-5.7.31
 </code></pre></div>
-
 <ol>
 <li>删除压缩文件</li>
 </ol>
 <div class="highlight"><pre><span></span><code>rm /mysql/mysql-5.7.31-linux-glibc2.12-x86_64.tar.gz
 </code></pre></div>
-
 <h2 id="6-mycnf">6. 修改 my.cnf 配置文件<a class="headerlink" href="#6-mycnf" title="Permanent link">&para;</a></h2>
 <ol>
 <li>备份旧的配置文件、修改新的配置：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>cp /etc/my.cnf /etc/my_5.7.28.cnf <span class="o">&amp;&amp;</span> vi /etc/my.cnf
 </code></pre></div>
-
 <p>修改以下行：</p>
 <div class="highlight"><pre><span></span><code>basedir=/mysql/service/mysql-5.7.31
 </code></pre></div>
-
 <ol>
 <li>执行 MySQL 的启动：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>/mysql/service/mysql-5.7.31/bin/mysqld --defaults-file<span class="o">=</span>/etc/my.cnf <span class="p">&amp;</span>
 </code></pre></div>
-
 <p>检查是否启动：</p>
 <div class="highlight"><pre><span></span><code>ps -ef <span class="p">|</span> grep mysqld <span class="p">|</span> grep -v grep
 </code></pre></div>
-
 <h2 id="7-mysql_upgrade">7. 运行 mysql_upgrade 升级数据字典<a class="headerlink" href="#7-mysql_upgrade" title="Permanent link">&para;</a></h2>
 <ol>
 <li>关闭 MySQL：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>/mysql/service/mysql-5.7.31/bin/mysql -uroot -p<span class="s1">&#39;mysql_password&#39;</span> --execute<span class="o">=</span><span class="s2">&quot;SET GLOBAL innodb_fast_shutdown=0&quot;</span> <span class="o">&amp;&amp;</span> /mysql/service/mysql-5.7.31/bin/mysqladmin -uroot -p<span class="s1">&#39;mysql_password&#39;</span> shutdown
 </code></pre></div>
-
 <ol>
 <li>
 <p>启动新版 MySQL：
@@ -1240,70 +1317,58 @@ service mysql stop
 </ol>
 <div class="highlight"><pre><span></span><code>/mysql/service/mysql-5.7.31/bin/mysql_upgrade -uroot -p<span class="s1">&#39;mysql_password&#39;</span>
 </code></pre></div>
-
 <ol>
 <li>检查无误后停止 MySQL：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>/mysql/service/mysql-5.7.31/bin/mysqladmin -uroot -p<span class="s1">&#39;mysql_password&#39;</span> shutdown
 </code></pre></div>
-
 <h2 id="8-mysql">8. 修改启动脚本重启 MySQL<a class="headerlink" href="#8-mysql" title="Permanent link">&para;</a></h2>
 <ol>
 <li>备份原启动脚本、复制新启动脚本：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>mv /etc/init.d/mysql /etc/init.d/mysql_20200908 <span class="o">&amp;&amp;</span> cp /mysql/service/mysql-5.7.31/support-files/mysql.server /etc/init.d/mysql
 </code></pre></div>
-
 <ol>
 <li>修改启动脚本：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>vi /etc/init.d/mysql
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># 修改内容：</span>
 <span class="nv">basedir</span><span class="o">=</span>/mysql/service/mysql-5.7.31/
 <span class="nv">datadir</span><span class="o">=</span>/mysql/data/
 </code></pre></div>
-
 <ol>
 <li>添加开机启动、启动 MySQL：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>chkconfig --add mysql <span class="o">&amp;&amp;</span> chkconfig mysql on <span class="o">&amp;&amp;</span> service mysql restart
 </code></pre></div>
-
 <h2 id="9">9. 设置环境变量<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <ol>
 <li>编辑：</li>
 </ol>
 <div class="highlight"><pre><span></span><code>vi /etc/profile
 </code></pre></div>
-
 <p>修改 <code>PATH</code>：</p>
 <div class="highlight"><pre><span></span><code>/mysql/service/mysql-5.7.31/bin:<span class="nv">$PATH</span>
 </code></pre></div>
-
 <ol>
 <li>刷新环境变量</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> /etc/profile
 </code></pre></div>
-
 <h2 id="10">10. 验证升级<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>mysql -V
 </code></pre></div>
-
 <h2 id="11-keepalived">11. 恢复 keepalived<a class="headerlink" href="#11-keepalived" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>su - //切换到超级用户
 service keepalived restart
 </code></pre></div>
-
 <h2 id="12">12. 主从连接检查<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
 <ol>
 <li>检查 MySQL 主从状态：</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="k">show</span> <span class="n">slave</span> <span class="n">status</span><span class="err">\</span><span class="k">G</span><span class="err">;</span>
 </code></pre></div>
-
 <ol>
 <li>检查 keepalived 状态：</li>
 </ol>
@@ -1327,7 +1392,7 @@ service keepalived restart
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../Java/%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" title="跨域问题" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../Java/%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1342,7 +1407,7 @@ service keepalived restart
           </a>
         
         
-          <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" title="慢查询排查" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1392,15 +1457,15 @@ service keepalived restart
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
