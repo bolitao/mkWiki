@@ -13,14 +13,14 @@
         <meta name="author" content="Boli Tao">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Java/JavaTestArticle/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Docker/%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%EF%BC%88vue%2BJava%EF%BC%89/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Test Article - Tiki</title>
+        <title>部署一个前后端分离项目（vue+Java） - Tiki</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-article" class="md-skip">
+        <a href="#java-dockerfile" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Test Article
+              部署一个前后端分离项目（vue+Java）
             
           </span>
         </div>
@@ -232,12 +232,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
       
       <label class="md-nav__link" for="nav-3-1">
         Docker
@@ -256,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+      <a href="../Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
         Windows Docker 代理设置
       </a>
     </li>
@@ -266,11 +268,52 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Docker/%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%EF%BC%88vue%2BJava%EF%BC%89/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          部署一个前后端分离项目（vue+Java）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         部署一个前后端分离项目（vue+Java）
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java-dockerfile" class="md-nav__link">
+    java Dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    docker-compose
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -302,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/mongo/" class="md-nav__link">
+      <a href="../compose%20conf/mongo/" class="md-nav__link">
         Mongo
       </a>
     </li>
@@ -314,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/mysql/" class="md-nav__link">
+      <a href="../compose%20conf/mysql/" class="md-nav__link">
         Mysql
       </a>
     </li>
@@ -326,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/netdata/" class="md-nav__link">
+      <a href="../compose%20conf/netdata/" class="md-nav__link">
         Netdata
       </a>
     </li>
@@ -338,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/nginx/" class="md-nav__link">
+      <a href="../compose%20conf/nginx/" class="md-nav__link">
         Nginx
       </a>
     </li>
@@ -350,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/postgres/" class="md-nav__link">
+      <a href="../compose%20conf/postgres/" class="md-nav__link">
         Postgres
       </a>
     </li>
@@ -362,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/rabbitmq/" class="md-nav__link">
+      <a href="../compose%20conf/rabbitmq/" class="md-nav__link">
         Rabbitmq
       </a>
     </li>
@@ -374,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/compose%20conf/redis/" class="md-nav__link">
+      <a href="../compose%20conf/redis/" class="md-nav__link">
         Redis
       </a>
     </li>
@@ -488,14 +531,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
       
       <label class="md-nav__link" for="nav-3-4">
         Java
@@ -512,20 +553,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Java/JavaTestArticle/" class="md-nav__link">
         Test Article
       </a>
-      
     </li>
   
 
@@ -535,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-nav__link">
+      <a href="../../Java/TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-nav__link">
         TSF 异常、事务问题复现
       </a>
     </li>
@@ -569,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/" class="md-nav__link">
+      <a href="../../Java/SQL/Mybatis%20Plus%20%E6%89%A7%E8%A1%8C%20SQL%20%E6%89%93%E5%8D%B0/" class="md-nav__link">
         Mybatis Plus 执行 SQL 打印
       </a>
     </li>
@@ -609,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nacos/rec/" class="md-nav__link">
+      <a href="../../Java/nacos/rec/" class="md-nav__link">
         Rec
       </a>
     </li>
@@ -649,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" class="md-nav__link">
+      <a href="../../Java/%E5%AE%89%E5%85%A8/%E8%B7%A8%E5%9F%9F/" class="md-nav__link">
         跨域问题
       </a>
     </li>
@@ -984,8 +1016,28 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java-dockerfile" class="md-nav__link">
+    java Dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    docker-compose
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -998,8 +1050,52 @@
               
                 
                 
-                <h1 id="test-article">Test Article<a class="headerlink" href="#test-article" title="Permanent link">&para;</a></h1>
-<p>This is a test article.</p>
+                  <h1>部署一个前后端分离项目（vue+Java）</h1>
+                
+                <h2 id="java-dockerfile">java Dockerfile<a class="headerlink" href="#java-dockerfile" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">java:8</span>
+<span class="k">EXPOSE</span><span class="s"> 8899</span>
+<span class="k">ADD</span> boliblog-0.0.1-SNAPSHOT.jar app.jar
+<span class="k">RUN</span> bash -c <span class="s1">&#39;touch /app.jar&#39;</span>
+<span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;java&quot;</span><span class="p">,</span> <span class="s2">&quot;-jar&quot;</span><span class="p">,</span> <span class="s2">&quot;/app.jar&quot;</span><span class="p">,</span> <span class="s2">&quot;--spring.profiles.active=prod&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="docker-compose">docker-compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>version: &#39;3&#39;
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 1199:80
+    volumes:
+      - /root/apps/myapps/boliblog/boliblog-fe:/usr/share/nginx/html
+      - /data/myapps/boliblog/nginx/nginx.conf:/etc/nginx/nginx.conf
+    privileged: true
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: &#39;bolitao&#39;
+  redis:
+    image: redis:latest
+    ports:
+      - 6389:6379
+    volumes:
+      - /data/myapps/boliblog/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - /data/myapps/boliblog/redis/datadir:/data/
+      - /data/myapps/boliblog/redis/logs:/logs/
+    command:
+      - /usr/local/etc/redis/redis.conf
+  boliblog:
+    image: boliblog:latest
+    build: .
+    ports:
+      - 8899:8899
+    depends_on:
+      - mysql
+      - redis
+</code></pre></div>
                 
               
               
@@ -1018,7 +1114,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../Git/gpg/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Windows%20Docker%20%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1027,19 +1123,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                tell git using gpg sign key
+                Windows Docker 代理设置
               </div>
             </div>
           </a>
         
         
-          <a href="../TSF%20%E5%BC%82%E5%B8%B8%E3%80%81%E4%BA%8B%E5%8A%A1%E9%97%AE%E9%A2%98%E5%A4%8D%E7%8E%B0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../compose%20conf/mongo/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                TSF 异常、事务问题复现
+                Mongo
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
