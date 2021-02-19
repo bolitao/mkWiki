@@ -979,7 +979,20 @@
                 
                   <h1>Nginx</h1>
                 
-                <ol>
+                <div class="highlight"><pre><span></span><code>version: &#39;3&#39;
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 1199:80
+    volumes:
+      - /root/apps/myapps/boliblog/boliblog-fe:/usr/share/nginx/html
+      - /data/myapps/boliblog/nginx/nginx.conf:/etc/nginx/nginx.conf
+    privileged: true
+</code></pre></div>
+<p>TODO:</p>
+<ol>
 <li>deploy</li>
 <li>proxy</li>
 <li>
@@ -989,8 +1002,6 @@
 <p><a href="https://codewithhugo.com/setting-up-express-and-redis-with-docker-compose/">https://codewithhugo.com/setting-up-express-and-redis-with-docker-compose/</a></p>
 </li>
 </ol>
-                
-                  
                 
               
               
