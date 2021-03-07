@@ -1154,7 +1154,7 @@
 <p>不使用 volume 挂载则无此问题。</p>
 <div class="highlight"><pre><span></span><code>chown -R <span class="m">999</span>:999 /data/rabbitmq
 </code></pre></div>
-<p>降低权限，在我的机器上，<code>999:999</code> 的实质意义为 <code>openmediavault-webgui:openmediavault-config</code>。</p>
+<p>降低权限，在我的机器上，<code>999:999</code> 的实质意义为 <code>openmediavault-webgui:openmediavault-config</code>。是的，我拿 OMV 作为家庭服务器使用。</p>
 <h2 id="enable-plugin">enable plugin<a class="headerlink" href="#enable-plugin" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it rabbitmq_rabbitmq_1 bash
 rabbitmq-plugins <span class="nb">enable</span> rabbitmq_management
