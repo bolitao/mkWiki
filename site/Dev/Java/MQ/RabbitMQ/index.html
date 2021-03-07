@@ -668,7 +668,7 @@
       
         <li class="md-nav__item">
   <a href="#todo" class="md-nav__link">
-    TODO
+    TODO 
   </a>
   
 </li>
@@ -1196,7 +1196,7 @@
       
         <li class="md-nav__item">
   <a href="#todo" class="md-nav__link">
-    TODO
+    TODO 
   </a>
   
 </li>
@@ -1245,9 +1245,128 @@
 <p><a href="https://github.com/bolitao/simpmqdemo">三种常用模式的简单示例</a></p>
 <h3 id="demo2">demo2<a class="headerlink" href="#demo2" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/bolitao/mqdemo">使用 RabbitMQ 进行邮件发送和重试</a></p>
-<h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
+<p>此方法缺陷：不能应对 MQ 发送成功，但邮件服务出现 exception 的情况（TODO）</p>
+<ol>
+<li>
+<p>rabbitTemplate 设置</p>
+<p>在确认 MQ 发送成功时，修改 status 为成功状态。</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Bean</span>
+<span class="n">RabbitTemplate</span> <span class="nf">rabbitTemplate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">RabbitTemplate</span> <span class="n">rabbitTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RabbitTemplate</span><span class="p">(</span><span class="n">cachingConnectionFactory</span><span class="p">);</span>
+    <span class="n">rabbitTemplate</span><span class="p">.</span><span class="na">setConfirmCallback</span><span class="p">((</span><span class="n">data</span><span class="p">,</span> <span class="n">ack</span><span class="p">,</span> <span class="n">cause</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">LOGGER</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;{}, {}, {}&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ack</span><span class="p">,</span> <span class="n">cause</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">msgId</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span>
+        <span class="n">LOGGER</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="n">msgId</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ack</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 消息发送成功</span>
+            <span class="n">LOGGER</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="n">msgId</span> <span class="o">+</span> <span class="s">&quot; 消息发送成功[MQ Config]&quot;</span><span class="p">);</span>
+            <span class="n">mailSendLogService</span><span class="p">.</span><span class="na">updateMailSendLogStatus</span><span class="p">(</span><span class="n">msgId</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 修改记录表中为成功</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">LOGGER</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="n">msgId</span> <span class="o">+</span> <span class="s">&quot; 消息发送失败[MQ Config] ack 异常&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="c1">// TODO</span>
+    <span class="n">rabbitTemplate</span><span class="p">.</span><span class="na">setReturnCallback</span><span class="p">((</span><span class="n">msg</span><span class="p">,</span> <span class="n">repCode</span><span class="p">,</span> <span class="n">repText</span><span class="p">,</span> <span class="n">exchange</span><span class="p">,</span> <span class="n">routingKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">LOGGER</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;消息发送失败[MQ Config 回调]&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="n">rabbitTemplate</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>MQ Listener</p>
+<p>在 MQ 消费者收到消息后，调用 MailService 发送邮件:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@RabbitListener</span><span class="p">(</span><span class="n">queues</span> <span class="o">=</span> <span class="p">{</span><span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_QUEUE_NAME</span><span class="p">})</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">handler</span><span class="p">(</span><span class="n">Message</span> <span class="n">message</span><span class="p">,</span> <span class="n">Channel</span> <span class="n">channel</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;已收到 &quot;</span> <span class="o">+</span> <span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_QUEUE_NAME</span> <span class="o">+</span> <span class="s">&quot; Queue 的消息，开始邮件发送&quot;</span><span class="p">);</span>
+    <span class="n">Integer</span> <span class="n">empId</span> <span class="o">=</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="n">message</span><span class="p">.</span><span class="na">getPayload</span><span class="p">();</span>
+    <span class="n">MessageHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="na">getHeaders</span><span class="p">();</span>
+    <span class="n">Long</span> <span class="n">tag</span> <span class="o">=</span> <span class="p">(</span><span class="n">Long</span><span class="p">)</span> <span class="n">headers</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">AmqpHeaders</span><span class="p">.</span><span class="na">DELIVERY_TAG</span><span class="p">);</span>
+    <span class="n">String</span> <span class="n">msgId</span> <span class="o">=</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="n">headers</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;spring_returned_message_correlation&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForHash</span><span class="p">().</span><span class="na">entries</span><span class="p">(</span><span class="s">&quot;mail_log&quot;</span><span class="p">).</span><span class="na">containsKey</span><span class="p">(</span><span class="n">msgId</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">//redis 中包含该 key，说明该消息已经被消费过</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="n">msgId</span> <span class="o">+</span> <span class="s">&quot;:消息已经被消费&quot;</span><span class="p">);</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">channel</span><span class="p">.</span><span class="na">basicAck</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span><span class="c1">//确认消息已消费</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;ack 异常: &quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// 收到消息，发送邮件</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="c1">// 以下是构造 mail 相关 ，略去</span>
+        <span class="c1">// ...</span>
+        <span class="n">mailSender</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">mail</span><span class="p">);</span>
+        <span class="n">redisTemplate</span><span class="p">.</span><span class="na">opsForHash</span><span class="p">().</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;mail_log&quot;</span><span class="p">,</span> <span class="n">msgId</span><span class="p">,</span> <span class="s">&quot;mail&quot;</span><span class="p">);</span>
+        <span class="n">channel</span><span class="p">.</span><span class="na">basicAck</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="n">msgId</span> <span class="o">+</span> <span class="s">&quot;:邮件发送成功&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">channel</span><span class="p">.</span><span class="na">basicNack</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">ioException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;nact 异常: &quot;</span><span class="p">,</span> <span class="n">ioException</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;邮件发送失败：&quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>重试机制</p>
+<p>其实就是定时任务，定时查询重试次数小于五次、状态为”投递中“的消息，查到的话就将 ID 通过 MQ 重新投递，以触发 MQ Listener、调用 MailService 发送邮件</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Scheduled</span><span class="p">(</span><span class="n">cron</span> <span class="o">=</span> <span class="s">&quot;0/10 * * * * ?&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">mailResendTask</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">MailSendLog</span><span class="o">&gt;</span> <span class="n">logs</span> <span class="o">=</span> <span class="n">mailSendLogService</span><span class="p">.</span><span class="na">getMailSendLogByStatus</span><span class="p">();</span>
+
+    <span class="n">logs</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">mailSendLog</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mailSendLog</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">mailSendLogService</span><span class="p">.</span><span class="na">updateMailSendLogStatus</span><span class="p">(</span><span class="n">mailSendLog</span><span class="p">.</span><span class="na">getMsgid</span><span class="p">(),</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">mailSendLogService</span><span class="p">.</span><span class="na">updateCount</span><span class="p">(</span><span class="n">mailSendLog</span><span class="p">.</span><span class="na">getMsgid</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Date</span><span class="p">());</span>
+            <span class="n">Integer</span> <span class="n">empId</span> <span class="o">=</span> <span class="n">mailSendLog</span><span class="p">.</span><span class="na">getEmpid</span><span class="p">();</span>
+            <span class="n">rabbitTemplate</span><span class="p">.</span><span class="na">convertAndSend</span><span class="p">(</span><span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_EXCHANGE_NAME</span><span class="p">,</span> <span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_ROUTING_KEY_NAME</span><span class="p">,</span> <span class="n">empId</span><span class="p">,</span> <span class="k">new</span> <span class="n">CorrelationData</span><span class="p">(</span><span class="n">mailSendLog</span><span class="p">.</span><span class="na">getMsgid</span><span class="p">()));</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>测试类</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="n">Integer</span> <span class="nf">addEmp</span><span class="p">(</span><span class="kt">int</span> <span class="n">empId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">msgId</span> <span class="o">=</span> <span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">();</span>
+
+    <span class="n">MailSendLog</span> <span class="n">mailSendLog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MailSendLog</span><span class="p">();</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setMsgid</span><span class="p">(</span><span class="n">msgId</span><span class="p">);</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setCreatetime</span><span class="p">(</span><span class="k">new</span> <span class="n">Date</span><span class="p">());</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setExchange</span><span class="p">(</span><span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_EXCHANGE_NAME</span><span class="p">);</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setRoutekey</span><span class="p">(</span><span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_ROUTING_KEY_NAME</span><span class="p">);</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setEmpid</span><span class="p">(</span><span class="n">empId</span><span class="p">);</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setCount</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">mailSendLog</span><span class="p">.</span><span class="na">setTrytime</span><span class="p">(</span><span class="k">new</span> <span class="n">Date</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1000L</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">MailConstants</span><span class="p">.</span><span class="na">MSG_TIMEOUT</span><span class="p">));</span>
+
+    <span class="n">mailSendLogService</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">mailSendLog</span><span class="p">);</span>
+
+    <span class="n">rabbitTemplate</span><span class="p">.</span><span class="na">convertAndSend</span><span class="p">(</span><span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_EXCHANGE_NAME</span><span class="p">,</span> <span class="n">MailConstants</span><span class="p">.</span><span class="na">MAIL_ROUTING_KEY_NAME</span><span class="p">,</span> <span class="n">empId</span><span class="p">,</span> <span class="k">new</span> <span class="n">CorrelationData</span><span class="p">(</span><span class="n">msgId</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在这一步：</p>
+<ol>
+<li>
+<p>如果 MQ 运行异常，消息未正常投递（<code>convertAndSend</code> 出错），那么 rabbitTemplate 中的 <code>updateMailSendLogStatus</code> 不会运行，MQ Listener 接收不到消息，不会调用 MailService，此时消息状态不会更改，由重试 Task 进行邮件的重新投递。</p>
+</li>
+<li>
+<p>如果消息投递正常（RabbitMQ 工作正常），那么 Listener 会收到消息，调用 MailService 发送邮件；rabbitTemplate 中的回调会更新邮件状态为 1（已成功投递）</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="todo">TODO <!--TODO--><a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
 <ul>
-<li>高可用 <!--TODO--></li>
+<li>高可用</li>
+<li>Demo 2 中 mailService 异常的重试机制</li>
 </ul>
                 
               

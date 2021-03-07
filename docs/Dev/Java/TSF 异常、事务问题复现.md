@@ -19,9 +19,7 @@
             </dependency>
 
             <dependency>
-                <groupId>cn.hsa.powersi</groupId>
-                <artifactId>hsa-powersi-base</artifactId>
-                <version>${hsa-powersi-base.version}</version>
+                <!--公司的一个基础依赖-->
             </dependency>
 ```
 
@@ -41,7 +39,7 @@
 <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
     
     ...
-    <bean class="cn.hsa.powersi.mybatisplus.plugins.BatchUpdateInterceptor">
+    <bean class="xxx.mybatisplus.plugins.BatchUpdateInterceptor">
                     <description>SQL批量更新拦截器</description>
     </bean>
     <bean id="hsafGlobalConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig">
@@ -57,7 +55,7 @@
         <property name="logicNotDeleteValue" value="1"/>
     </bean>
     <bean id="hsafLogicSqlInjector"
-          class="cn.hsa.powersi.mybatisplus.injector.LogicSqlInjector">
+          class="xxx.mybatisplus.injector.LogicSqlInjector">
         <description>SQL注入器</description>
     </bean>
 ```
