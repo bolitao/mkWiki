@@ -62,7 +62,7 @@
 
 ### 导入 nes 出问题的代码（test 包）
 
-swagger 调用 `cn/hsa/mbs/nes/test` 接口，json 如下：
+swagger 调用 `/path/to/api/test` 接口，json 如下：
 
 ``` json
 [
