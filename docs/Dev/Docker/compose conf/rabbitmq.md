@@ -31,7 +31,7 @@ touch: cannot touch '/etc/rabbitmq/rabbitmq.conf': Permission denied
 chown -R 999:999 /data/rabbitmq
 ```
 
-降低权限，在我的机器上，`999:999` 的实质意义为 `openmediavault-webgui:openmediavault-config`。
+降低权限，在我的机器上，`999:999` 的实质意义为 `openmediavault-webgui:openmediavault-config`。是的，我拿 OMV 作为家庭服务器使用。
 
 ## enable plugin
 
