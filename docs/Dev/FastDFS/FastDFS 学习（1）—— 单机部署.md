@@ -259,6 +259,53 @@ fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
 
 ## 配置 Nginx 访问
 
+``` shell
+sudo vim /etc/fdfs/mod_fastdfs.conf
+```
+
+修改如下：
+
+``` conf
+tracker_server=192.168.79.131:22122  #tracker服务器IP和端口
+url_have_group_name=true
+store_path0=/home/dfs
+```
+
+配置 nginx.config:
+
+``` shell
+sudo vim /etc/nginx/nginx.conf
+```
+
+添加 server 段如下：
+
+``` conf
+server {
+    listen       8888;    ## 该端口为storage.conf中的http.server_port相同
+    server_name  localhost;
+    location ~/group[0-9]/ {
+        ngx_fastdfs_module;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+    root   html;
+    }
+}
+```
+
+reload nginx：
+
+``` shell
+sudo nginx -s reload
+```
+
+在测试章节中，我上传了名为 `group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz` 的文件。
+
+于是通过此链接测试 nginx 文件下载：`http://192.168.79.131:8888/group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz`。
+
+可以看到 FastDFS Nginx 模块是工作正常的：
+
+![](https://cdn.jsdelivr.net/gh/bolitao/PicRepository/img/20210314190507.png)
 
 ## FastDFS 分布式部署
 
