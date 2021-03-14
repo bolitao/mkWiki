@@ -1,3 +1,5 @@
+# FastDFS 学习（1）—— 单机部署
+
 ## FastDFS
 
 ``` shell
@@ -206,54 +208,63 @@ sudo chown nginx:adm /var/log/nginx/access.log /var/log/nginx/error.log
     http.server_port=8888
     ```
 
-3. client 测试
+## client 测试
 
-    ``` shell
-    sudo vim /etc/fdfs/client.conf
-    ```
+``` shell
+sudo vim /etc/fdfs/client.conf
+```
 
-    修改内容：
+修改内容：
 
-    ``` conf
-    base_path=/home/dfs
-    tracker_server=192.168.79.131:22122
-    
-    ```
+``` conf
+base_path=/home/dfs
+tracker_server=192.168.79.131:22122
 
-    重启 tracker 和 storage：
+```
 
-    ``` shekll
-    sudo /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart
-    sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart
-    ```
+重启 tracker 和 storage：
 
-    使用 fdfs_monitor 验证：
+``` shekll
+sudo /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart
+sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart
+```
 
-    ``` shell
-    sudo /usr/bin/fdfs_monitor /etc/fdfs/storage.conf
-    ```
+使用 fdfs_monitor 验证：
 
-    输出如下（输出太长，省略部分）：
+``` shell
+sudo /usr/bin/fdfs_monitor /etc/fdfs/storage.conf
+```
 
-    ``` log
-    [2021-03-14 18:45:37] DEBUG - base_path=/home/dfs, connect_timeout=5, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=1, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0
+输出如下（输出太长，省略部分）：
 
-    server_count=1, server_index=0
+``` log
+[2021-03-14 18:45:37] DEBUG - base_path=/home/dfs, connect_timeout=5, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=1, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0
 
-    tracker server is 192.168.79.131:22122
+server_count=1, server_index=0
 
-    group count: 1
+tracker server is 192.168.79.131:22122
 
-    Group 1:
-    group name = group1
-    ```
+group count: 1
 
-    测试：
+Group 1:
+group name = group1
+```
 
-    ``` shell
-    # 测试，有文件路径返回表示成功，如：group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz
-    fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
-    ```
+测试：
+
+``` shell
+# 测试，有文件路径返回表示成功，如：group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz
+fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
+```
+
+## 配置 Nginx 访问
+
+
+## FastDFS 分布式部署
+
+这部分是在工作机写的，IP 和系统（分布式用的 CentOS）有所不同可能造成和本篇内容的脱节，所以单独形成了一篇文章：
+
+[]()
 
 ## 参考
 
