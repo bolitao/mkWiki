@@ -1419,14 +1419,15 @@ sudo /usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart
 <div class="highlight"><pre><span></span><code>sudo /usr/bin/fdfs_monitor /etc/fdfs/storage.conf
 </code></pre></div>
 <p>输出如下：</p>
-<p>``` log
-[2021-03-14 18:45:37] DEBUG - base_path=/home/dfs, connect_timeout=5, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=1, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0</p>
-</li>
-</ol>
-<p>server_count=1, server_index=0</p>
-<p>tracker server is 192.168.79.131:22122</p>
-<p>group count: 1</p>
-<p>Group 1:
+<div class="highlight"><pre><span></span><code>[2021-03-14 18:45:37] DEBUG - base_path=/home/dfs, connect_timeout=5, network_timeout=60, tracker_server_count=1, anti_steal_token=0, anti_steal_secret_key length=0, use_connection_pool=1, g_connection_pool_max_idle_time=3600s, use_storage_id=0, storage server id count: 0
+
+server_count=1, server_index=0
+
+tracker server is 192.168.79.131:22122
+
+group count: 1
+
+Group 1:
 group name = group1
 disk total space = 99,773 MB
 disk free space = 73,268 MB
@@ -1438,8 +1439,9 @@ storage HTTP port = 8888
 store path count = 1
 subdir count per path = 256
 current write server index = 0
-current trunk file id = 0</p>
-<div class="codehilite"><pre><span></span><code>    Storage 1:
+current trunk file id = 0
+
+    Storage 1:
             id = 192.168.79.131
             ip_addr = 192.168.79.131  ACTIVE
             http domain =
@@ -1501,16 +1503,13 @@ current trunk file id = 0</p>
             last_source_update = 1970-01-01 08:00:00
             last_sync_update = 1970-01-01 08:00:00
             last_synced_timestamp = 1970-01-01 08:00:00
-```
-
-测试：
-
-``` shell
-# 测试，有文件路径返回表示成功，如：group1/M00/00/00/xx.tar.gz
-fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
-```
 </code></pre></div>
-
+<p>测试：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 测试，有文件路径返回表示成功，如：group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz</span>
+fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
+</code></pre></div>
+</li>
+</ol>
 <h2 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/happyfish100/fastdfs/wiki">Home · happyfish100/fastdfs Wiki</a></li>
