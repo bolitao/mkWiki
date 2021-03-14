@@ -544,6 +544,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%20%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E5%92%8C%20cli%20%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        FastDFS 学习（2）—— 集群部署和 cli 操作
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1482,6 +1494,36 @@ group name = group1
 fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
 </code></pre></div>
 <h2 id="nginx_1">配置 Nginx 访问<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/fdfs/mod_fastdfs.conf
+</code></pre></div>
+<p>修改如下：</p>
+<div class="highlight"><pre><span></span><code>tracker_server=192.168.79.131:22122  #tracker服务器IP和端口
+url_have_group_name=true
+store_path0=/home/dfs
+</code></pre></div>
+<p>配置 nginx.config:</p>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/nginx/nginx.conf
+</code></pre></div>
+<p>添加 server 段如下：</p>
+<div class="highlight"><pre><span></span><code>server {
+    listen       8888;    ## 该端口为storage.conf中的http.server_port相同
+    server_name  localhost;
+    location ~/group[0-9]/ {
+        ngx_fastdfs_module;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+    root   html;
+    }
+}
+</code></pre></div>
+<p>reload nginx：</p>
+<div class="highlight"><pre><span></span><code>sudo nginx -s reload
+</code></pre></div>
+<p>在测试章节中，我上传了名为 <code>group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz</code> 的文件。</p>
+<p>于是通过此链接测试 nginx 文件下载：<code>http://192.168.79.131:8888/group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz</code>。</p>
+<p>可以看到 FastDFS Nginx 模块是工作正常的：</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/bolitao/PicRepository/img/20210314190507.png" /></p>
 <h2 id="fastdfs_2">FastDFS 分布式部署<a class="headerlink" href="#fastdfs_2" title="Permanent link">&para;</a></h2>
 <p>这部分是在工作机写的，IP 和系统（分布式用的 CentOS）有所不同可能造成和本篇内容的脱节，所以单独形成了一篇文章：</p>
 <p><a href=""></a></p>
@@ -1522,13 +1564,13 @@ fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
         </a>
       
       
-        <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%20%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E5%92%8C%20cli%20%E6%93%8D%E4%BD%9C/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Nuxt, Vuetify Start
+              FastDFS 学习（2）—— 集群部署和 cli 操作
             </div>
           </div>
           <div class="md-footer__button md-icon">
