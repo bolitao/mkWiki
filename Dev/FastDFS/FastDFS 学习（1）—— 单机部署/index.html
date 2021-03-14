@@ -13,14 +13,14 @@
         <meta name="author" content="Boli Tao">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FastDFS/%E5%AE%89%E8%A3%85/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FastDFS/FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E2%80%94%E2%80%94%20%E5%8D%95%E6%9C%BA%E9%83%A8%E7%BD%B2/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
     
     
       
-        <title>安装 - Tiki</title>
+        <title>FastDFS 学习（1）—— 单机部署 - Tiki</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fastdfs" class="md-skip">
+        <a href="#fastdfs-1" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              安装
+              FastDFS 学习（1）—— 单机部署
             
           </span>
         </div>
@@ -462,19 +462,23 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          安装
+          FastDFS 学习（1）—— 单机部署
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        安装
+        FastDFS 学习（1）—— 单机部署
       </a>
       
         
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -500,6 +504,27 @@
         <li class="md-nav__item">
   <a href="#fastdfs_1" class="md-nav__link">
     FastDFS 单机配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    client 测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx_1" class="md-nav__link">
+    配置 Nginx 访问
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastdfs_2" class="md-nav__link">
+    FastDFS 分布式部署
   </a>
   
 </li>
@@ -1170,6 +1195,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1199,6 +1226,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    client 测试
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx_1" class="md-nav__link">
+    配置 Nginx 访问
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastdfs_2" class="md-nav__link">
+    FastDFS 分布式部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     参考
   </a>
@@ -1218,9 +1266,8 @@
               
                 
                 
-                  <h1>安装</h1>
-                
-                <h2 id="fastdfs">FastDFS<a class="headerlink" href="#fastdfs" title="Permanent link">&para;</a></h2>
+                <h1 id="fastdfs-1">FastDFS 学习（1）—— 单机部署<a class="headerlink" href="#fastdfs-1" title="Permanent link">&para;</a></h1>
+<h2 id="fastdfs">FastDFS<a class="headerlink" href="#fastdfs" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装编译所需的库和工具</span>
 sudo apt -y install libev-dev git gcc g++ make automake autoconf libtool pcre2-utils libpcre2-dev zlib1g zlib1g-dev openssl libssh-dev wget vim
 
@@ -1403,8 +1450,8 @@ tracker_server=192.168.79.131:22122
 http.server_port=8888
 </code></pre></div>
 </li>
-<li>
-<p>client 测试</p>
+</ol>
+<h2 id="client">client 测试<a class="headerlink" href="#client" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo vim /etc/fdfs/client.conf
 </code></pre></div>
 <p>修改内容：</p>
@@ -1434,8 +1481,10 @@ group name = group1
 <div class="highlight"><pre><span></span><code><span class="c1"># 测试，有文件路径返回表示成功，如：group1/M00/00/00/wKhPg2BN6Z6AXk8WADVIAIo8asI.tar.gz</span>
 fdfs_upload_file /etc/fdfs/client.conf /usr/local/src/zlib-1.2.11.tar.gz
 </code></pre></div>
-</li>
-</ol>
+<h2 id="nginx_1">配置 Nginx 访问<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
+<h2 id="fastdfs_2">FastDFS 分布式部署<a class="headerlink" href="#fastdfs_2" title="Permanent link">&para;</a></h2>
+<p>这部分是在工作机写的，IP 和系统（分布式用的 CentOS）有所不同可能造成和本篇内容的脱节，所以单独形成了一篇文章：</p>
+<p><a href=""></a></p>
 <h2 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/happyfish100/fastdfs/wiki">Home · happyfish100/fastdfs Wiki</a></li>
