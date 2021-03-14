@@ -13,14 +13,14 @@
         <meta name="author" content="Boli Tao">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FastDFS/%E5%AE%89%E8%A3%85/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
     
     
       
-        <title>数据库日志 - Tiki</title>
+        <title>安装 - Tiki</title>
       
     
     
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fastdfs" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据库日志
+              安装
             
           </span>
         </div>
@@ -427,12 +432,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       <label class="md-nav__link" for="__nav_3_3">
         FastDFS
@@ -448,11 +455,66 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../FastDFS/%E5%AE%89%E8%A3%85/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          安装
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         安装
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastdfs" class="md-nav__link">
+    FastDFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastdfs_1" class="md-nav__link">
+    配置 FastDFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -634,14 +696,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" >
       
       <label class="md-nav__link" for="__nav_3_8">
         MySQL
@@ -659,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%8D%87%E7%BA%A7/" class="md-nav__link">
+      <a href="../../MySQL/%E5%8D%87%E7%BA%A7/" class="md-nav__link">
         MySQL 升级
       </a>
     </li>
@@ -671,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-nav__link">
+      <a href="../../MySQL/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-nav__link">
         慢查询排查
       </a>
     </li>
@@ -681,18 +741,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%BF%97/" class="md-nav__link">
         数据库日志
       </a>
-      
     </li>
   
 
@@ -1109,108 +1162,225 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastdfs" class="md-nav__link">
+    FastDFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastdfs_1" class="md-nav__link">
+    配置 FastDFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>数据库日志</h1>
+                  <h1>安装</h1>
                 
-                <p><strong>GTID</strong></p>
-<p>在/mysql/data/目录下面存在一个auto.cnf文件</p>
-<div class="highlight"><pre><span></span><code><span class="err">[auto]</span>
-<span class="na">server-uuid</span><span class="o">=</span><span class="s">aff809d2-80bc-11e8-991b-005056a33cce</span>
-</code></pre></div>
-<p>我们可以在后面将添加ip，便于之后的识别，如172.18.100.57，则修改为:</p>
-<div class="highlight"><pre><span></span><code><span class="err">[auto]</span>
-<span class="na">server-uuid</span><span class="o">=</span><span class="s">aff809d2-80bc-11e8-991b-005056a33cce172-18-100-57</span>
-</code></pre></div>
-<p><strong>会话级别不产生日志</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c">#注意： 这种模式一般不常使用，针对大表操作，不想产生日志的情况下，不过会导致不同步，需要在同步的库也执行同样的操作</span>
-<span class="na">set sql_log_bin</span> <span class="o">=</span> <span class="s">0;</span>
-<span class="err">start</span> <span class="err">transacation;</span>
-<span class="err">update</span> <span class="err">....</span>
-<span class="na">commit；set sql_log_bin</span> <span class="o">=</span> <span class="s">1;</span>
-</code></pre></div>
-<p><strong>二进制日志</strong></p>
-<p><strong>解析二进制日志需要基于完整的数据字典</strong></p>
-<ul>
-<li>Mysql的为Binglog</li>
-<li>Oracle的为Redolog</li>
-<li>Postgresql的为WAL</li>
-</ul>
-<p><strong>解析Redo与Undo</strong></p>
-<ul>
-<li>Redo把binlog的日志数据解析对源sql的重复执行，主要用于数据恢复</li>
-<li>Undo把binlog日志解析成对源sql的反向执行，应用与回滚操作</li>
-</ul>
-<p><strong>解析工具：</strong>  使用binlog2log这个开源python工具进行</p>
-<p><strong>注意:</strong>  一般使用没有问题能达到99%的解析正确，但是数据库进行迁移之后会导致数据字典变化，所以这时候binlog2log会执行报错</p>
-<p><strong>binlog写入模式</strong></p>
-<p>直接关系到数据同步的效率，优化数据写入，可以优化数据同步效率</p>
-<ul>
-<li>普通写入(5.6之前)</li>
-<li>基于组提交的写入(大概5.7之后)- Group Commit</li>
-<li>基于写集合的写入(大概5.7.22后)-WRSET
-  <img alt="1584151938505" src="C:\Users\mg\AppData\Local\Temp\1584151938505.png" /></li>
-</ul>
-<p>上面的两条sql，后一条语句执行依赖于前面语句先执行，反例:比如id=1和id=2就没有依赖</p>
-<p><strong><em>组提交</em></strong></p>
-<p>原理: </p>
-<div class="highlight"><pre><span></span><code>同一时刻(维度是微秒)可能有很多事务提交，就是通过日志延迟提交的方式，将这些事务成组的提交，批量写入binlog
-</code></pre></div>
-<p>缺点：</p>
-<div class="highlight"><pre><span></span><code>1.组提交只能做到表级别，操作两个不同表的时候才能判断没有依赖，可以成为一组的，不能做到行的判断，颗粒度很大
-有一些热表，可能一直在发生数据，可能就永远不能进行组提交，所以，就有后面的写集合的出现
-2.有延迟，对主库生产产生微小的性能影响
-3.日志风险，不立即提交，宕机之后可能导致风向，依靠redo进行风险保障
-</code></pre></div>
-<p>参数:</p>
-<div class="highlight"><pre><span></span><code><span class="c"># 最大等待时间，单位微秒，默认0，范围: 0~ 1000000(即:1s)</span>
-<span class="na">binlog_group_commit_sync_delay</span> <span class="o">=</span> <span class="s">0</span>
+                <h2 id="fastdfs">FastDFS<a class="headerlink" href="#fastdfs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 安装编译所需的库和工具</span>
+sudo apt -y install libev-dev git gcc g++ make automake autoconf libtool pcre2-utils libpcre2-dev zlib1g zlib1g-dev openssl libssh-dev wget vim
 
-<span class="c"># 全局动态变量，单位个数</span>
-<span class="na">binlog_group_commit_sync_no_delay_count</span>
-</code></pre></div>
-<p>组提交日志查看</p>
-<p>Cat binlog.log | grep last committed</p>
-<p>日志分析时的 </p>
-<p>sequence_number 所有事务发生现后顺序数值。</p>
-<p>last_committed=序列号: 旧组最近的一个sequence_number值，日志在应用复制时需要按顺序执行</p>
-<p>序列号不一样表示不能在一个组，可能是因为不是在一个时间，或者不是在同一个表</p>
-<p>序列号一样表示在一个组(是否在一组，依赖于主库的并发)</p>
-<p>意义:</p>
-<p>减少写日志的IO压力： 物理IO代价大，减少IO的次数，IO吞吐下降，CPU也下降</p>
-<p>同一组事务可以在应用复制时并行执行</p>
-<p><strong><em>写集合</em></strong></p>
-<p>参数(8.0之后)</p>
-<p>binlog_transaction_dependency_history_size</p>
-<p>同一时刻库表列Hash值是一样的就是存在依赖，不一样就可以放在一个组里面</p>
-<p><strong>借鉴思路</strong></p>
-<p>来源: DBA提供ms脚本，用于数据库运维的基本命令的综合运行脚本</p>
-<p>开发: 把tomcat，redis，jdk等运维操作都用脚本的形式进行简化</p>
-<p><strong>交流记录</strong></p>
-<ol>
-<li>
-<p>日志多大和数据多大没有必然关系，主要是在于并发，在于DML等操作的频率</p>
-</li>
-<li>
-<p>保守的binlog保留时间推荐: 7-10天</p>
-</li>
-<li>
-<p>进行日志延迟，主库的日志一天之后才能到达从库，这样就是规避删库跑路的操作等恶意处理</p>
-</li>
-<li>主从都停掉之后，对比数据是否同步就是对重要的表的数量或者业务数据的总数(如余额sum)进行对比</li>
-<li>误操作可以通过Undo日志进行恢复</li>
-<li>现在不是gtid，切换到gtid只需要开启gtid模式就可以，建议旧的就不要切换到GTID模式</li>
-<li>gtid限制：只有这种语句有限制create table2 as select * from table1;</li>
-</ol>
-<div class="highlight"><pre><span></span><code># 规避以上语句限制
-create table like table2;
+<span class="c1"># fastdfs 文件存储路径</span>
+sudo mkdir /home/dfs
 
-insert into table select * from table2
+<span class="nb">cd</span> /usr/local/src
+
+<span class="c1"># libfastcommon</span>
+sudo git clone https://github.com/happyfish100/libfastcommon.git --depth <span class="m">1</span>
+<span class="nb">cd</span> libfastcommon/
+sudo sh ./make.sh <span class="o">&amp;&amp;</span> sudo sh ./make.sh install
+
+<span class="c1"># FastDFS</span>
+<span class="nb">cd</span> ..
+sudo git clone https://github.com/happyfish100/fastdfs.git --depth <span class="m">1</span>
+<span class="nb">cd</span> fastdfs/
+sudo sh ./make.sh
+sudo sh ./make.sh install
+sudo cp /usr/local/src/fastdfs/conf/http.conf /etc/fdfs/ <span class="c1">#供nginx访问使用</span>
+sudo cp /usr/local/src/fastdfs/conf/mime.types /etc/fdfs/ <span class="c1">#供nginx访问使用</span>
+
+<span class="c1"># fastdfs-nginx-module</span>
+<span class="nb">cd</span> ..
+sudo git clone https://github.com/happyfish100/fastdfs-nginx-module.git --depth <span class="m">1</span>
+sudo cp /usr/local/src/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs
 </code></pre></div>
+<h2 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># dependencies</span>
+sudo apt install -y perl libperl-dev libgd3 libgd-dev libgeoip1 libgeoip-dev geoip-bin libxml2 libxml2-dev libxslt1.1 libxslt1-dev
+
+<span class="c1"># PCRE version 8.44</span>
+sudo wget https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz <span class="o">&amp;&amp;</span> sudo tar xzvf pcre-8.44.tar.gz
+<span class="c1"># zlib version 1.2.11</span>
+sudo wget https://www.zlib.net/zlib-1.2.11.tar.gz <span class="o">&amp;&amp;</span> sudo tar xzvf zlib-1.2.11.tar.gz
+<span class="c1"># openssl 1.1.1j</span>
+sudo wget https://www.openssl.org/source/openssl-1.1.1j.tar.gz <span class="o">&amp;&amp;</span> sudo tar xzvf openssl-1.1.1j.tar.gz
+<span class="c1"># nginx 1.18.0</span>
+sudo wget http://nginx.org/download/nginx-1.18.0.tar.gz <span class="o">&amp;&amp;</span> sudo tar -xzvf nginx-1.18.0.tar.gz
+<span class="nb">cd</span> nginx-1.18.0
+
+<span class="c1"># man help</span>
+sudo cp man/nginx.8 /usr/share/man/man8
+sudo gzip /usr/share/man/man8/nginx.8
+
+<span class="c1"># configure</span>
+sudo sh ./configure --prefix<span class="o">=</span>/etc/nginx <span class="se">\</span>
+            --sbin-path<span class="o">=</span>/usr/sbin/nginx <span class="se">\</span>
+            --modules-path<span class="o">=</span>/usr/lib/nginx/modules <span class="se">\</span>
+            --conf-path<span class="o">=</span>/etc/nginx/nginx.conf <span class="se">\</span>
+            --error-log-path<span class="o">=</span>/var/log/nginx/error.log <span class="se">\</span>
+            --pid-path<span class="o">=</span>/var/run/nginx.pid <span class="se">\</span>
+            --lock-path<span class="o">=</span>/var/run/nginx.lock <span class="se">\</span>
+            --user<span class="o">=</span>nginx <span class="se">\</span>
+            --group<span class="o">=</span>nginx <span class="se">\</span>
+            --build<span class="o">=</span>Ubuntu <span class="se">\</span>
+            --builddir<span class="o">=</span>nginx-1.18.0 <span class="se">\</span>
+            --with-select_module <span class="se">\</span>
+            --with-poll_module <span class="se">\</span>
+            --with-threads <span class="se">\</span>
+            --with-file-aio <span class="se">\</span>
+            --with-http_ssl_module <span class="se">\</span>
+            --with-http_v2_module <span class="se">\</span>
+            --with-http_realip_module <span class="se">\</span>
+            --with-http_addition_module <span class="se">\</span>
+            --with-http_xslt_module<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-http_image_filter_module<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-http_geoip_module<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-http_sub_module <span class="se">\</span>
+            --with-http_dav_module <span class="se">\</span>
+            --with-http_flv_module <span class="se">\</span>
+            --with-http_mp4_module <span class="se">\</span>
+            --with-http_gunzip_module <span class="se">\</span>
+            --with-http_gzip_static_module <span class="se">\</span>
+            --with-http_auth_request_module <span class="se">\</span>
+            --with-http_random_index_module <span class="se">\</span>
+            --with-http_secure_link_module <span class="se">\</span>
+            --with-http_degradation_module <span class="se">\</span>
+            --with-http_slice_module <span class="se">\</span>
+            --with-http_stub_status_module <span class="se">\</span>
+            --with-http_perl_module<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-perl_modules_path<span class="o">=</span>/usr/share/perl/5.30.0 <span class="se">\</span>
+            --with-perl<span class="o">=</span>/usr/bin/perl <span class="se">\</span>
+            --http-log-path<span class="o">=</span>/var/log/nginx/access.log <span class="se">\</span>
+            --http-client-body-temp-path<span class="o">=</span>/var/cache/nginx/client_temp <span class="se">\</span>
+            --http-proxy-temp-path<span class="o">=</span>/var/cache/nginx/proxy_temp <span class="se">\</span>
+            --http-fastcgi-temp-path<span class="o">=</span>/var/cache/nginx/fastcgi_temp <span class="se">\</span>
+            --http-uwsgi-temp-path<span class="o">=</span>/var/cache/nginx/uwsgi_temp <span class="se">\</span>
+            --http-scgi-temp-path<span class="o">=</span>/var/cache/nginx/scgi_temp <span class="se">\</span>
+            --with-mail<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-mail_ssl_module <span class="se">\</span>
+            --with-stream<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-stream_ssl_module <span class="se">\</span>
+            --with-stream_realip_module <span class="se">\</span>
+            --with-stream_geoip_module<span class="o">=</span>dynamic <span class="se">\</span>
+            --with-stream_ssl_preread_module <span class="se">\</span>
+            --with-compat <span class="se">\</span>
+            --with-pcre<span class="o">=</span>../pcre-8.44 <span class="se">\</span>
+            --with-pcre-jit <span class="se">\</span>
+            --with-zlib<span class="o">=</span>../zlib-1.2.11 <span class="se">\</span>
+            --with-openssl<span class="o">=</span>../openssl-1.1.1j <span class="se">\</span>
+            --with-openssl-opt<span class="o">=</span>no-nextprotoneg <span class="se">\</span>
+            --with-debug <span class="se">\</span>
+            --add-module<span class="o">=</span>/usr/local/src/fastdfs-nginx-module/src/
+
+<span class="c1"># compile and install</span>
+sudo make <span class="o">&amp;&amp;</span> sudo make install
+
+<span class="c1"># add nginx user &amp; group</span>
+sudo adduser --system --shell /bin/false --no-create-home --disabled-login --disabled-password --gecos <span class="s2">&quot;nginx user&quot;</span> --group nginx
+
+<span class="c1"># create folder</span>
+sudo mkdir -p /var/cache/nginx/client_temp /var/cache/nginx/fastcgi_temp /var/cache/nginx/proxy_temp /var/cache/nginx/scgi_temp /var/cache/nginx/uwsgi_temp
+sudo chmod <span class="m">700</span> /var/cache/nginx/*
+sudo chown nginx:root /var/cache/nginx/*
+
+<span class="c1"># test nginx</span>
+sudo nginx -t
+<span class="c1"># output:</span>
+<span class="c1">#nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span>
+<span class="c1">#nginx: configuration file /etc/nginx/nginx.conf test is successful</span>
+</code></pre></div>
+<p>systemd:</p>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/systemd/system/nginx.service
+</code></pre></div>
+<p>copy following:
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=nginx - high performance web server
+Documentation=https://nginx.org/en/docs/
+After=network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/nginx.pid
+ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx.conf
+ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></p>
+<p>test systemd:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload
+sudo systemctl <span class="nb">enable</span> nginx.service
+sudo systemctl start nginx.service
+sudo systemctl status nginx.service
+</code></pre></div>
+<p>create directories &amp; grant permissions:</p>
+<div class="highlight"><pre><span></span><code>sudo mkdir /etc/nginx/<span class="o">{</span>conf.d,snippets,sites-available,sites-enabled<span class="o">}</span>
+sudo chmod <span class="m">640</span> /var/log/nginx/*
+sudo chown nginx:adm /var/log/nginx/access.log /var/log/nginx/error.log
+</code></pre></div>
+<h2 id="fastdfs_1">配置 FastDFS<a class="headerlink" href="#fastdfs_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/happyfish100/fastdfs/wiki">Home · happyfish100/fastdfs Wiki</a></li>
+<li><a href="How to Compile Nginx From Source on Ubuntu 20.04 LTS">How to Compile Nginx From Source on Ubuntu 20.04 LTS</a></li>
+</ul>
                 
               
               
@@ -1228,7 +1398,7 @@ insert into table select * from table2
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%8E%92%E6%9F%A5/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../Docker/compose%20conf/redis/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1237,19 +1407,19 @@ insert into table select * from table2
               <span class="md-footer__direction">
                 上一页
               </span>
-              慢查询排查
+              Redis
             </div>
           </div>
         </a>
       
       
-        <a href="../../PaaS/%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              弹性伸缩
+              Nuxt, Vuetify Start
             </div>
           </div>
           <div class="md-footer__button md-icon">
