@@ -13,14 +13,14 @@
         <meta name="author" content="Boli Tao">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FrontEnd/Nuxt%2C%20Vuetify%20Start/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/FastDFS/FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%20%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E5%92%8C%20cli%20%E6%93%8D%E4%BD%9C/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
     
     
       
-        <title>Nuxt, Vuetify Start - Tiki</title>
+        <title>FastDFS 学习（2）—— 集群部署和 cli 操作 - Tiki</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nuxt-vuetify-start" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nuxt, Vuetify Start
+              FastDFS 学习（2）—— 集群部署和 cli 操作
             
           </span>
         </div>
@@ -432,12 +432,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       <label class="md-nav__link" for="__nav_3_3">
         FastDFS
@@ -455,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FastDFS/FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E2%80%94%E2%80%94%20%E5%8D%95%E6%9C%BA%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+      <a href="../FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E2%80%94%E2%80%94%20%E5%8D%95%E6%9C%BA%E9%83%A8%E7%BD%B2/" class="md-nav__link">
         FastDFS 学习（1）—— 单机部署
       </a>
     </li>
@@ -465,11 +467,52 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../FastDFS/FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%20%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E5%92%8C%20cli%20%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FastDFS 学习（2）—— 集群部署和 cli 操作
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         FastDFS 学习（2）—— 集群部署和 cli 操作
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    集群部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本操作
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -483,14 +526,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
       
       <label class="md-nav__link" for="__nav_3_4">
         FrontEnd
@@ -506,49 +547,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Nuxt, Vuetify Start
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" class="md-nav__link">
         Nuxt, Vuetify Start
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create" class="md-nav__link">
-    create
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -558,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../FrontEnd/npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-nav__link">
         npn 和 yarn 的网络问题
       </a>
     </li>
@@ -1165,8 +1168,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1175,8 +1176,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create" class="md-nav__link">
-    create
+  <a href="#_1" class="md-nav__link">
+    集群部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本操作
   </a>
   
 </li>
@@ -1194,37 +1202,239 @@
               
                 
                 
-                <h1 id="nuxt-vuetify-start">Nuxt, Vuetify Start<a class="headerlink" href="#nuxt-vuetify-start" title="Permanent link">&para;</a></h1>
-<h2 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>npm init nuxt-app vuetify_learning
+                  <h1>FastDFS 学习（2）—— 集群部署和 cli 操作</h1>
+                
+                <h3 id="_1">集群部署<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>准备三台服务器，其 IP 为 192.168.15.130、192.168.15.131、192.168.15.132（简记为 130、131、132）。三台服务器均已安装 FastDFS tracker、FastDFS storage、FastDFS client 和 Tengine。</p>
+<ol>
+<li>修改三台机器的 tracker 配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/fdfs/tracker.conf
 
-<span class="c1"># output:</span>
-create-nuxt-app v3.4.0
-✨  Generating Nuxt.js project <span class="k">in</span> vuetify_learning
-? Project name: vuetify_learning
-? Programming language: JavaScript
-? Package manager: Npm
-? UI framework: Vuetify.js
-? Nuxt.js modules: Axios
-? Linting tools: ESLint, Prettier
-? Testing framework: None
-? Rendering mode: Universal <span class="o">(</span>SSR / SSG<span class="o">)</span>
-? Deployment target: Server <span class="o">(</span>Node.js hosting<span class="o">)</span>
-? Development tools: jsconfig.json <span class="o">(</span>Recommended <span class="k">for</span> VS Code <span class="k">if</span> you<span class="err">&#39;</span>re not using typescript<span class="o">)</span>
-? Continuous integration: None
-? Version control system: Git
-
-🎉  Successfully created project vuetify_learning
-
-
-        <span class="nb">cd</span> vuetify_learning
-
-  To build <span class="p">&amp;</span> start <span class="k">for</span> production:
-
-        <span class="nb">cd</span> vuetify_learning
-        npm run build
-        npm run start
+<span class="c1"># 修改以下内容</span>
+<span class="nv">port</span><span class="o">=</span><span class="m">22122</span>  <span class="c1"># tracker 服务器端口</span>
+<span class="nv">base_path</span><span class="o">=</span>/home/dfs  <span class="c1"># 存储日志和数据的根目录</span>
 </code></pre></div>
+<ol>
+<li>修改三台机器的 storage 配置：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/fdfs/storage.conf
+
+<span class="c1"># 修改以下配置</span>
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.130:22122
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.131:22122
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.132:22122
+<span class="nv">port</span><span class="o">=</span><span class="m">23000</span>
+<span class="nv">base_path</span><span class="o">=</span>/home/dfs
+<span class="nv">store_path0</span><span class="o">=</span>/home/dfs
+http.server_port<span class="o">=</span><span class="m">8888</span>
+</code></pre></div>
+<p>重启 tracker  和 storage 服务，检查是否 storage 服务器是否登记到 tracker：</p>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/fdfs_trackerd restart <span class="c1"># 重启 tracker 服务</span>
+sudo /etc/init.d/fdfs_storaged restart <span class="c1"># 重启 storage 服务</span>
+
+sudo /usr/bin/fdfs_monitor /etc/fdfs/storage.conf <span class="c1"># 检查服务状态</span>
+<span class="c1"># 以下是输出，省略部分非关键信息</span>
+...
+tracker server is <span class="m">192</span>.168.15.132:22122
+
+group count: <span class="m">1</span>
+
+Group <span class="m">1</span>:
+group <span class="nv">name</span> <span class="o">=</span> group1
+...
+        Storage <span class="m">1</span>:
+                <span class="nv">id</span> <span class="o">=</span> <span class="m">192</span>.168.15.130
+                <span class="nv">ip_addr</span> <span class="o">=</span> <span class="m">192</span>.168.15.130  ACTIVE
+                http <span class="nv">domain</span> <span class="o">=</span>
+                <span class="nv">version</span> <span class="o">=</span> <span class="m">6</span>.06
+                join <span class="nb">time</span> <span class="o">=</span> <span class="m">2020</span>-07-14 <span class="m">10</span>:08:26
+                up <span class="nb">time</span> <span class="o">=</span> <span class="m">2020</span>-07-14 <span class="m">15</span>:57:34
+...
+        Storage <span class="m">2</span>:
+                <span class="nv">id</span> <span class="o">=</span> <span class="m">192</span>.168.15.131
+                <span class="nv">ip_addr</span> <span class="o">=</span> <span class="m">192</span>.168.15.131  ACTIVE
+                http <span class="nv">domain</span> <span class="o">=</span>
+                <span class="nv">version</span> <span class="o">=</span> <span class="m">6</span>.06
+...
+        Storage <span class="m">3</span>:
+                <span class="nv">id</span> <span class="o">=</span> <span class="m">192</span>.168.15.132
+                <span class="nv">ip_addr</span> <span class="o">=</span> <span class="m">192</span>.168.15.132  ACTIVE
+                http <span class="nv">domain</span> <span class="o">=</span>
+                <span class="nv">version</span> <span class="o">=</span> <span class="m">6</span>.06
+</code></pre></div>
+<p>可以看到三台存储服务器都处于激活状态，多运行几次 <code>fdfs_monitor</code> 命令会发现 <code>tracker server</code> 有所变换，即多个 tracker 的切换功能也是生效的。</p>
+<ol>
+<li>测试 client，修改 client 配置文件：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/fdfs/client.conf
+
+<span class="c1"># 需要修改的内容如下：</span>
+<span class="nv">base_path</span><span class="o">=</span>/home/moe/dfs
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.130:22122
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.131:22122
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.132:22122
+</code></pre></div>
+<p>测试 client 文件上传：</p>
+<div class="highlight"><pre><span></span><code>fdfs_upload_file /etc/fdfs/client.conf /home/bolitao/apps/screenfetch/screenfetch-dev
+<span class="c1"># 返回上传的文件位置和文件名：</span>
+group1/M00/00/00/wKgPgl8Nau-AcXEFAAPBDqCqwtI9997099
+</code></pre></div>
+<p>由于三台 storage 处于同一 group，组内文件互备，所以可以在三台存储服务器中发现上传的文件：</p>
+<div class="highlight"><pre><span></span><code>ls -l /home/dfs/data/00/00 <span class="c1"># 列出文件</span>
+<span class="c1"># 以下是命令输出：</span>
+-rw-r--r-- <span class="m">1</span> root root <span class="m">246030</span> 7月  <span class="m">14</span> <span class="m">16</span>:21 wKgPgl8Nau-AcXEFAAPBDqCqwtI9997099
+</code></pre></div>
+<ol>
+<li>配置 nginx 访问，修改服务器的 <code>/etc/fdfs/mod_fastdfs.conf</code> 文件：</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.130:22122
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.131:22122
+<span class="nv">tracker_server</span> <span class="o">=</span> <span class="m">192</span>.168.15.132:22122
+<span class="nv">url_have_group_name</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">store_path0</span><span class="o">=</span>/home/dfs
+</code></pre></div>
+<p>在 nginx 中添加以下 server：</p>
+<div class="highlight"><pre><span></span><code><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span>       <span class="mi">8888</span><span class="p">;</span>    <span class="c1">## 该端口为storage.conf中的http.server_port相同</span>
+    <span class="kn">server_name</span>  <span class="s">localhost</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="p">~</span><span class="sr">/group[0-9]/</span> <span class="p">{</span>
+        <span class="kn">ngx_fastdfs_module</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kn">error_page</span>   <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span>  <span class="s">/50x.html</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="p">=</span> <span class="s">/50x.html</span> <span class="p">{</span>
+    <span class="kn">root</span>   <span class="s">html</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>重启三台 nginx 后，可在三台服务器下载文件，比如访问 <code>http://192.168.15.130:8888/group1/M00/00/00/wKgPgl8Nau-AcXEFAAPBDqCqwtI9997099</code>（或其他两个 host），会弹出下载对话框：</p>
+<p><img alt="image-20200714163319953" src="https://cdn.jsdelivr.net/gh/bolitao/PicRepository@master/img/image-20200714163319953.png" /></p>
+<blockquote>
+<p>备注：这里配置了三台服务器既作 tracker 服务器也作存储服务器。实际运用时更多情况是将 tracker 和 storage 划分，tracker 用作负载均衡和调度，storage 用来存储，如下图所示：</p>
+<p><img alt="11" src="https://cdn.jsdelivr.net/gh/bolitao/PicRepository@master/img/11.png" /></p>
+</blockquote>
+<h3 id="_2">基本操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>tracker 服务管理：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/fdfs_trackerd start <span class="c1"># 启动 tracker 服务</span>
+sudo /etc/init.d/fdfs_trackerd restart <span class="c1"># 重启动 tracker 服务</span>
+sudo /etc/init.d/fdfs_trackerd stop <span class="c1"># 停止 tracker 服务</span>
+sudo chkconfig fdfs_trackerd on <span class="c1"># 自启动 tracker 服务</span>
+</code></pre></div>
+<ul>
+<li>storage 服务管理：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/fdfs_storaged start <span class="c1"># 启动 storage 服务</span>
+sudo /etc/init.d/fdfs_storaged restart <span class="c1"># 重启 storage 服务</span>
+sudo /etc/init.d/fdfs_storaged stop <span class="c1"># 停止 storage 服务</span>
+sudo chkconfig fdfs_storaged on <span class="c1"># 自启动 storage 服务</span>
+</code></pre></div>
+<ul>
+<li>检查集群（会输出所有服务器的信息）：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo /usr/bin/fdfs_monitor /etc/fdfs/storage.conf
+<span class="c1"># 以下是命令输出：</span>
+<span class="o">[</span>sudo<span class="o">]</span> bolitao 的密码：
+<span class="o">[</span><span class="m">2020</span>-07-14 <span class="m">10</span>:24:49<span class="o">]</span> DEBUG - <span class="nv">base_path</span><span class="o">=</span>/home/dfs, <span class="nv">connect_timeout</span><span class="o">=</span><span class="m">5</span>, <span class="nv">network_timeout</span><span class="o">=</span><span class="m">60</span>, <span class="nv">tracker_server_count</span><span class="o">=</span><span class="m">1</span>, <span class="nv">anti_steal_token</span><span class="o">=</span><span class="m">0</span>, anti_steal_secret_key <span class="nv">length</span><span class="o">=</span><span class="m">0</span>, <span class="nv">use_connection_pool</span><span class="o">=</span><span class="m">1</span>, <span class="nv">g_connection_pool_max_idle_time</span><span class="o">=</span>3600s, <span class="nv">use_storage_id</span><span class="o">=</span><span class="m">0</span>, storage server id count: <span class="m">0</span>
+
+<span class="nv">server_count</span><span class="o">=</span><span class="m">1</span>, <span class="nv">server_index</span><span class="o">=</span><span class="m">0</span>
+
+tracker server is <span class="m">192</span>.168.188.130:22122
+
+group count: <span class="m">1</span>
+
+Group <span class="m">1</span>:
+group <span class="nv">name</span> <span class="o">=</span> group1
+disk total <span class="nv">space</span> <span class="o">=</span> <span class="m">48</span>,096 MB
+disk free <span class="nv">space</span> <span class="o">=</span> <span class="m">44</span>,515 MB
+trunk free <span class="nv">space</span> <span class="o">=</span> <span class="m">0</span> MB
+storage server <span class="nv">count</span> <span class="o">=</span> <span class="m">1</span>
+active server <span class="nv">count</span> <span class="o">=</span> <span class="m">1</span>
+storage server <span class="nv">port</span> <span class="o">=</span> <span class="m">23000</span>
+storage HTTP <span class="nv">port</span> <span class="o">=</span> <span class="m">8888</span>
+store path <span class="nv">count</span> <span class="o">=</span> <span class="m">1</span>
+subdir count per <span class="nv">path</span> <span class="o">=</span> <span class="m">256</span>
+current write server <span class="nv">index</span> <span class="o">=</span> <span class="m">0</span>
+current trunk file <span class="nv">id</span> <span class="o">=</span> <span class="m">0</span>
+...
+</code></pre></div>
+<ul>
+<li>上传：使用 <code>fdfs_upload_file</code> 命令，命令跟的第一个参数表示客户端配置文件，第二个参数表示要上传的文件，比如：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo fdfs_upload_file /etc/fdfs/client.conf /home/bolitao/apps/apache-tomcat-9.0.37/BUILDING.txt
+</code></pre></div>
+<ul>
+<li>下载：使用 <code>fdfs_download_file</code> 命令进行下载，第一个参数是客户端配置文件，第二个参数是要下载的文件，比如：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>fdfs_download_file /etc/fdfs/client.conf group1/M00/00/00/wKi8gl8NE5yAFQc7AABKJvC0Vqw094.txt
+</code></pre></div>
+<ul>
+<li>删除：使用 <code>fdfs_delete_file</code> 命令进行文件删除，第一个参数是配置文件，第二个参数是要删除的文件，比如：</li>
+</ul>
+<div class="highlight"><pre><span></span><code>fdfs_delete_file /etc/fdfs/client.conf group1/M00/00/00/wKi8gl8NE5yAFQc7AABKJvC0Vqw094.txt
+
+<span class="c1"># 再次下载该文件</span>
+fdfs_download_file /etc/fdfs/client.conf 
+group1/M00/00/00/wKi8gl8NE5yAFQc7AABKJvC0Vqw094.txt
+<span class="c1"># 提示文件不存在</span>
+<span class="o">[</span><span class="m">2020</span>-07-14 <span class="m">10</span>:39:16<span class="o">]</span> ERROR - file: tracker_proto.c, line: <span class="m">50</span>, server: <span class="m">192</span>.168.188.130:23000, response status <span class="m">2</span> !<span class="o">=</span> <span class="m">0</span>
+<span class="o">[</span><span class="m">2020</span>-07-14 <span class="m">10</span>:39:16<span class="o">]</span> ERROR - file: ../client/storage_client.c, line: <span class="m">598</span>, fdfs_recv_header fail, result: <span class="m">2</span>
+download file fail, error no: <span class="m">2</span>, error info: No such file or directory
+</code></pre></div>
+<ul>
+<li>
+<p>设置多个组：</p>
+</li>
+<li>
+<p>修改 <code>/etc/fdfs/storage.conf</code> 文件中：</p>
+<ul>
+<li><code>store_path_count</code> 的值</li>
+<li>新增 <code>store_path</code>，比如 <code>store_path1</code>、<code>store_path2</code></li>
+</ul>
+</li>
+<li>
+<p>修改 <code>mod_fastdfs.conf</code> 文件：</p>
+<ul>
+<li>
+<p><code>store_path_count</code> 的值</p>
+</li>
+<li>
+<p><code>store_pathx</code> 的值</p>
+</li>
+<li>
+<p>仿照 group 添加更多 group，比如：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>group1<span class="o">]</span>
+<span class="nv">group_name</span><span class="o">=</span>group1
+<span class="nv">storage_server_port</span><span class="o">=</span><span class="m">23000</span>
+<span class="nv">store_path_count</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">store_path0</span><span class="o">=</span>/home/dfs/data/group1/M00
+<span class="nv">store_path1</span><span class="o">=</span>/home/dfs/data/group1/M01
+
+<span class="o">[</span>group2<span class="o">]</span>
+<span class="nv">group_name</span><span class="o">=</span>group2
+<span class="nv">storage_server_port</span><span class="o">=</span><span class="m">23000</span>
+<span class="nv">store_path_count</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">store_path0</span><span class="o">=</span>/home/dfs/data/group2/M00
+<span class="nv">store_path1</span><span class="o">=</span>/home/dfs/data/group2/M01
+</code></pre></div>
+</li>
+<li>
+<p>修改 nginx 反向代理配置：</p>
+<div class="highlight"><pre><span></span><code><span class="k">location</span> <span class="p">~</span><span class="sr">/group[0-9]/M00</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="s">/home/dfs/data/group1</span>
+    <span class="s">ngx_fastdfs_module</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">location</span> <span class="p">~</span><span class="sr">/group[0-9]/M01</span> <span class="p">{</span>
+    <span class="kn">root</span> <span class="s">/home/dfs/data/group2</span>
+    <span class="s">ngx_fastdfs_module</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
                 
               
               
@@ -1242,7 +1452,7 @@ create-nuxt-app v3.4.0
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../FastDFS/FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%20%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2%E5%92%8C%20cli%20%E6%93%8D%E4%BD%9C/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../FastDFS%20%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89%E2%80%94%E2%80%94%20%E5%8D%95%E6%9C%BA%E9%83%A8%E7%BD%B2/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1251,19 +1461,19 @@ create-nuxt-app v3.4.0
               <span class="md-footer__direction">
                 上一页
               </span>
-              FastDFS 学习（2）—— 集群部署和 cli 操作
+              FastDFS 学习（1）—— 单机部署
             </div>
           </div>
         </a>
       
       
-        <a href="../npn%20%E5%92%8C%20yarn%20%E7%9A%84%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../FrontEnd/Nuxt%2C%20Vuetify%20Start/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              npn 和 yarn 的网络问题
+              Nuxt, Vuetify Start
             </div>
           </div>
           <div class="md-footer__button md-icon">
