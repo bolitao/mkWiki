@@ -1250,9 +1250,9 @@
                 
                 <h1 id="git">Git 相关疑难杂症<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
 <h2 id="git-gpg-sign-gpg-no-secret-key">git gpg sign 提示 gpg No secret key<a class="headerlink" href="#git-gpg-sign-gpg-no-secret-key" title="Permanent link">&para;</a></h2>
-<p>在 Windows 下，可能是 git 没找到 gpg 路径，在 <code>~/.gitconfig</code> 添加如下行可解决：</p>
+<p>在 Windows 下，可能是 git 没找到 gpg 路径（我遇到的情况是这种），在 <code>~/.gitconfig</code> 添加如下行可解决：</p>
 <div class="highlight"><pre><span></span><code>[gpg]
-    program = C:\\Users\\tblsy\\scoop\\apps\\gnupg\\current\\bin\\gpg.exe
+    program = C:\\Users\\username\\scoop\\apps\\gnupg\\current\\bin\\gpg.exe
 </code></pre></div>
 <h2 id="git_1">git 必要的几个配置<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>[user]
