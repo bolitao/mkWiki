@@ -2,11 +2,11 @@
 
 ## git gpg sign 提示 gpg No secret key
 
-在 Windows 下，可能是 git 没找到 gpg 路径，在 `~/.gitconfig` 添加如下行可解决：
+在 Windows 下，可能是 git 没找到 gpg 路径（我遇到的情况是这种），在 `~/.gitconfig` 添加如下行可解决：
 
 ``` conf
 [gpg]
-    program = C:\\Users\\tblsy\\scoop\\apps\\gnupg\\current\\bin\\gpg.exe
+    program = C:\\Users\\username\\scoop\\apps\\gnupg\\current\\bin\\gpg.exe
 ```
 
 ## git 必要的几个配置
