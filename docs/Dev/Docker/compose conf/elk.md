@@ -1,4 +1,21 @@
-## ES
+最简单的办法：
+
+[deviantony/docker-elk: The Elastic stack (ELK) powered by Docker and Compose.](https://github.com/deviantony/docker-elk)
+
+安装 ik 分词插件，编辑 `elasticsearch/Dockerfile`，添加以下：
+
+``` dockerfile
+RUN elasticsearch-plugin install -b https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.11.2/elasticsearch-analysis-ik-7.11.2.zip
+```
+
+随后：
+
+``` shell
+sudo docker-compose build
+sudo docker-compose up -d
+```
+
+<!-- ## ES
 
 ## Kibana
 
@@ -90,7 +107,7 @@ volumes:
 networks:
   elastic:
     driver: bridge
-```
+``` -->
 
 ## ref
 
