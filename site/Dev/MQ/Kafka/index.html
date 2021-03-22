@@ -13,14 +13,14 @@
         <meta name="author" content="Boli Tao">
       
       
-        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/Java/JavaTestArticle/">
+        <link rel="canonical" href="https://wiki.bolitao.xyz/Dev/MQ/Kafka/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.4">
     
     
       
-        <title>Test Article - Tiki</title>
+        <title>kafka - Tiki</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-article" class="md-skip">
+        <a href="#kafka" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Test Article
+              kafka
             
           </span>
         </div>
@@ -507,14 +507,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
       
       <label class="md-nav__link" for="__nav_2_5">
         Java
@@ -530,20 +528,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Java/JavaTestArticle/" class="md-nav__link">
         Test Article
       </a>
-      
     </li>
   
 
@@ -574,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MicroService/%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" class="md-nav__link">
+      <a href="../../Java/MicroService/%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" class="md-nav__link">
         注册中心与配置中心
       </a>
     </li>
@@ -613,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SpringSecurity/start/" class="md-nav__link">
+      <a href="../../Java/SpringSecurity/start/" class="md-nav__link">
         入门
       </a>
     </li>
@@ -635,12 +624,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
       
       <label class="md-nav__link" for="__nav_2_6">
         MQ
@@ -656,11 +647,97 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../MQ/Kafka/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          kafka
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         kafka
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    编写代码
+  </a>
+  
+    <nav class="md-nav" aria-label="编写代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    maven 依赖
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    生产者
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    消费者
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller" class="md-nav__link">
+    controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    运行效果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -670,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MQ/RabbitMQ/" class="md-nav__link">
+      <a href="../RabbitMQ/" class="md-nav__link">
         RabbitMQ 相关
       </a>
     </li>
@@ -1217,6 +1294,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    编写代码
+  </a>
+  
+    <nav class="md-nav" aria-label="编写代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    maven 依赖
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    生产者
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    消费者
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller" class="md-nav__link">
+    controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    运行效果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1228,8 +1368,88 @@
               
                 
                 
-                <h1 id="test-article">Test Article<a class="headerlink" href="#test-article" title="Permanent link">&para;</a></h1>
-<p>This is a test article.</p>
+                <h1 id="kafka">kafka<a class="headerlink" href="#kafka" title="Permanent link">&para;</a></h1>
+<h2 id="_1">编写代码<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="maven">maven 依赖<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">&lt;!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.kafka<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-kafka<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.3.5.RELEASE<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="c">&lt;!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.apache.kafka<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>kafka-clients<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.3.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h3 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="p">:</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9090</span>
+<span class="nt">spring</span><span class="p">:</span>
+  <span class="nt">kafka</span><span class="p">:</span>
+    <span class="nt">consumer</span><span class="p">:</span>
+      <span class="nt">group-id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">testGroup01</span>
+      <span class="nt">auto-offset-reset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">earliest</span>
+      <span class="nt">key-deserializer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">org.apache.kafka.common.serialization.StringDeserializer</span>
+      <span class="nt">value-deserializer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">org.apache.kafka.common.serialization.StringDeserializer</span>
+      <span class="nt">bootstrap-servers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.200.17:9092</span>
+    <span class="nt">producer</span><span class="p">:</span>
+      <span class="nt">key-serializer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">org.apache.kafka.common.serialization.StringSerializer</span>
+      <span class="nt">value-serializer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">org.apache.kafka.common.serialization.StringSerializer</span>
+      <span class="nt">bootstrap-servers</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.200.17:9092</span>
+</code></pre></div>
+<h3 id="_3">生产者<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@Service</span>
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Producer</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TOPIC</span> <span class="o">=</span> <span class="s">&quot;hikafka&quot;</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">KafkaTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">kafkaTemplate</span><span class="p">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">Producer</span><span class="p">(</span><span class="n">KafkaTemplate</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">kafkaTemplate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">kafkaTemplate</span> <span class="o">=</span> <span class="n">kafkaTemplate</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;#### -&gt; Producing message -&gt; %s&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">));</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">kafkaTemplate</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">TOPIC</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_4">消费者<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@Slf4j</span>
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Consumer</span> <span class="p">{</span>
+    <span class="nd">@KafkaListener</span><span class="p">(</span><span class="n">topics</span> <span class="o">=</span> <span class="s">&quot;hikafka&quot;</span><span class="p">,</span> <span class="n">groupId</span> <span class="o">=</span> <span class="s">&quot;testGroup01&quot;</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">consume</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;#### -&gt; Consumed message -&gt; %s&quot;</span><span class="p">,</span> <span class="n">message</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="controller">controller<a class="headerlink" href="#controller" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;kafka&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KafkaTestController</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Producer</span> <span class="n">producer</span><span class="p">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">public</span> <span class="nf">KafkaTestController</span><span class="p">(</span><span class="n">Producer</span> <span class="n">producer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">producer</span> <span class="o">=</span> <span class="n">producer</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@GetMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;publish&quot;</span><span class="p">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">publish</span><span class="p">(</span><span class="nd">@RequestParam</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;message&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">producer</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_5">运行效果<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>运行应用后，访问 <code>http://localhost:9090/kafka/publish?message=hiKafka</code> 在 topic 发布消息，运行效果如下：</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/bolitao/PicRepository/img/20210322161044.png" /></p>
                 
               
               
@@ -1247,7 +1467,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../Git/gpg/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../Java/SpringSecurity/start/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1256,19 +1476,19 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              tell git using gpg sign key
+              入门
             </div>
           </div>
         </a>
       
       
-        <a href="../MicroService/%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E4%B8%8E%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../RabbitMQ/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              注册中心与配置中心
+              RabbitMQ 相关
             </div>
           </div>
           <div class="md-footer__button md-icon">
