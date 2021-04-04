@@ -30,7 +30,7 @@ core 配置文件内容：
       }
   },
   "picgoPlugins": {
-    "picgo-plugin-gitee": true
+    "picgo-plugin-github": true
   }
 }
 ```
