@@ -50,3 +50,82 @@ self.con.execute(sql, values)
 @Trim21:
 
 ![](https://tva4.sinaimg.cn/large/bd69bf14ly1gd8pov927oj21j01uydu0.jpg)
+
+## executemany
+
+templet : sql模板字符串,
+
+例如
+
+``` sql
+insert into table(id,name) values(%s,%s)
+```
+
+args: 模板字符串的参数，是一个列表，列表中的每一个元素必须是元组！
+
+例如：  [(1,'小明'),(2,'zeke'),(3,'琦琦'),(4,'韩梅梅')
+
+*e.g.*
+
+``` python
+#coding=utf-8
+import MySQLdb
+import traceback
+
+tmp = "insert into exch_no_rand_auto(stkcode) values(%s);"   #SQL模板字符串
+l_tupple = [(i,) for i in range(100)]   #生成数据参数，list里嵌套tuple
+
+class mymysql(object):
+    def __init__(self):
+        self.conn = MySQLdb.connect(
+            host='127.0.0.1',
+            port = 3306,
+            user = 'root',
+            passwd = '123456',
+            db = 'xtp3')
+
+    def insert_sql(self,temp,data):
+        cur = self.conn.cursor()
+        try:
+            cur.executemany(temp,data)
+            self.conn.commit()
+        except:
+            self.conn.rollback()
+            traceback.print_exc()
+        finally:
+            cur.close()
+
+if __name__ == '__main__':
+    m = mymysql()
+    m.insert_sql(tmp,l_tupple)
+#coding=utf-8
+import MySQLdb
+import traceback
+
+tmp = "insert into exch_no_rand_auto(stkcode) values(%s);"   #SQL模板字符串
+l_tupple = [(i,) for i in range(100)]   #生成数据参数，list里嵌套tuple
+
+class mymysql(object):
+    def __init__(self):
+        self.conn = MySQLdb.connect(
+            host='127.0.0.1',
+            port = 3306,
+            user = 'root',
+            passwd = '123456',
+            db = 'xtp3')
+
+    def insert_sql(self,temp,data):
+        cur = self.conn.cursor()
+        try:
+            cur.executemany(temp,data)
+            self.conn.commit()
+        except:
+            self.conn.rollback()
+            traceback.print_exc()
+        finally:
+            cur.close()
+
+if __name__ == '__main__':
+    m = mymysql()
+    m.insert_sql(tmp,l_tupple)
+```
