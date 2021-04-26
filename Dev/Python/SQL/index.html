@@ -1012,6 +1012,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#executemany" class="md-nav__link">
+    executemany
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1546,6 +1553,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#executemany" class="md-nav__link">
+    executemany
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1598,6 +1612,75 @@
 </code></pre></div></p>
 <p>@Trim21:</p>
 <p><img alt="" src="https://tva4.sinaimg.cn/large/bd69bf14ly1gd8pov927oj21j01uydu0.jpg" /></p>
+<h2 id="executemany">executemany<a class="headerlink" href="#executemany" title="Permanent link">&para;</a></h2>
+<p>templet : sql模板字符串,</p>
+<p>例如</p>
+<div class="highlight"><pre><span></span><code><span class="k">insert</span> <span class="k">into</span> <span class="k">table</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">name</span><span class="p">)</span> <span class="k">values</span><span class="p">(</span><span class="o">%</span><span class="n">s</span><span class="p">,</span><span class="o">%</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<p>args: 模板字符串的参数，是一个列表，列表中的每一个元素必须是元组！</p>
+<p>例如：  [(1,'小明'),(2,'zeke'),(3,'琦琦'),(4,'韩梅梅')</p>
+<p><em>e.g.</em></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#coding=utf-8</span>
+<span class="kn">import</span> <span class="nn">MySQLdb</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="s2">&quot;insert into exch_no_rand_auto(stkcode) values(</span><span class="si">%s</span><span class="s2">);&quot;</span>   <span class="c1">#SQL模板字符串</span>
+<span class="n">l_tupple</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>   <span class="c1">#生成数据参数，list里嵌套tuple</span>
+
+<span class="k">class</span> <span class="nc">mymysql</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="o">=</span> <span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+            <span class="n">host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+            <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span><span class="p">,</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+            <span class="n">passwd</span> <span class="o">=</span> <span class="s1">&#39;123456&#39;</span><span class="p">,</span>
+            <span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;xtp3&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">insert_sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">mymysql</span><span class="p">()</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">insert_sql</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">l_tupple</span><span class="p">)</span>
+<span class="c1">#coding=utf-8</span>
+<span class="kn">import</span> <span class="nn">MySQLdb</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="n">tmp</span> <span class="o">=</span> <span class="s2">&quot;insert into exch_no_rand_auto(stkcode) values(</span><span class="si">%s</span><span class="s2">);&quot;</span>   <span class="c1">#SQL模板字符串</span>
+<span class="n">l_tupple</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>   <span class="c1">#生成数据参数，list里嵌套tuple</span>
+
+<span class="k">class</span> <span class="nc">mymysql</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="o">=</span> <span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+            <span class="n">host</span><span class="o">=</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+            <span class="n">port</span> <span class="o">=</span> <span class="mi">3306</span><span class="p">,</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+            <span class="n">passwd</span> <span class="o">=</span> <span class="s1">&#39;123456&#39;</span><span class="p">,</span>
+            <span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;xtp3&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">insert_sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">()</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">mymysql</span><span class="p">()</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">insert_sql</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">l_tupple</span><span class="p">)</span>
+</code></pre></div>
                 
               
               
