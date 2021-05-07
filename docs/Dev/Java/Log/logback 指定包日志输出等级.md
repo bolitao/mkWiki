@@ -37,3 +37,7 @@
     </Logger>
 </configuration>
 ```
+
+refer:
+
+- [Log4j2指定包的日志级别 - 简书](https://www.jianshu.com/p/e6f6bd8665bc)
