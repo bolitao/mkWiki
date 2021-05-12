@@ -20,7 +20,7 @@
     
     
       
-        <title>Test Article - Tiki</title>
+        <title>使用 systemd 管理 Java 程序 - Tiki</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-article" class="md-skip">
+        <a href="#systemd-java" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Test Article
+              使用 systemd 管理 Java 程序
             
           </span>
         </div>
@@ -600,9 +600,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 systemd 管理 Java 程序
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Test Article
+        使用 systemd 管理 Java 程序
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    REF
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1650,6 +1680,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    REF
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1661,8 +1706,117 @@
               
                 
                 
-                <h1 id="test-article">Test Article<a class="headerlink" href="#test-article" title="Permanent link">&para;</a></h1>
-<p>This is a test article.</p>
+                <h1 id="systemd-java">使用 systemd 管理 Java 程序<a class="headerlink" href="#systemd-java" title="Permanent link">&para;</a></h1>
+<p><strong>a simple demo:</strong></p>
+<div class="highlight"><pre><span></span><code>vim /etc/systemd/system/halo.service
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>Halo Service
+<span class="nv">Documentation</span><span class="o">=</span>https://halo.run
+<span class="nv">After</span><span class="o">=</span>network-online.target
+<span class="nv">Wants</span><span class="o">=</span>network-online.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">User</span><span class="o">=</span>USER
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/java -server -Xms256m -Xmx256m -jar YOUR_JAR_PATH
+<span class="nv">ExecStop</span><span class="o">=</span>/bin/kill -s QUIT <span class="nv">$MAINPID</span>
+<span class="nv">Restart</span><span class="o">=</span>always
+<span class="nv">StandOutput</span><span class="o">=</span>syslog
+
+<span class="nv">StandError</span><span class="o">=</span>inherit
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>systemctl daemon-reload
+systemctl start halo
+systemctl status halo
+systemctl <span class="nb">enable</span> halo
+journalctl -n <span class="m">20</span> -u halo
+
+sudo systemctl restart myapp
+</code></pre></div>
+<p><strong>another:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>Manage Java service
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">WorkingDirectory</span><span class="o">=</span>/opt/prod
+<span class="nv">ExecStart</span><span class="o">=</span>/bin/java -Xms128m -Xmx256m -jar myapp.jar
+<span class="nv">User</span><span class="o">=</span>jvmapps
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">Restart</span><span class="o">=</span>on-failure
+<span class="nv">RestartSec</span><span class="o">=</span><span class="m">10</span>
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div>
+<p><strong>one more:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>My Java driven simple service
+<span class="nv">After</span><span class="o">=</span>syslog.target network.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">SuccessExitStatus</span><span class="o">=</span><span class="m">143</span>
+
+<span class="nv">User</span><span class="o">=</span>appuser
+<span class="nv">Group</span><span class="o">=</span>appgroup
+
+<span class="nv">Type</span><span class="o">=</span>simple
+
+<span class="nv">Environment</span><span class="o">=</span><span class="s2">&quot;JAVA_HOME=/path/to/jvmdir&quot;</span>
+<span class="nv">WorkingDirectory</span><span class="o">=</span>/path/to/app/workdir
+<span class="nv">ExecStart</span><span class="o">=</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span>/bin/java -jar javaapp.jar
+<span class="nv">ExecStop</span><span class="o">=</span>/bin/kill -15 <span class="nv">$MAINPID</span>
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div>
+<ul>
+<li>ExecStop specifies the service termination command, and systemd is smart enough to figure out the PID of the started process. It automatically creates a MAINPID environment variable</li>
+<li>systemd to send a 15 (SIGTERM) system signal to terminate the process gracefully.</li>
+<li>The JVM designers made Java return a non-zero exit code in case it is terminated by a system signal. As a non-zero base, they took 128, and the resulting exit code is a sum of 128 and the signal numeric value.</li>
+<li><strong><em>By setting SuccessExitStatus to 143, we tell systemd to handle that value (128+15) as a normal exit.</em></strong></li>
+</ul>
+<p><strong>forking mode:</strong></p>
+<p>use a shell script to start the service, the JVM will be started by the shell (bash) process. This operation is known as fork, and it’s why we set the service Type to forking.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nv">JAVA_HOME</span><span class="o">=</span>/path/to/jvmdir
+<span class="nv">WORKDIR</span><span class="o">=</span>/path/to/app/workdir
+<span class="nv">JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&quot; -Xms256m -Xmx512m -server &quot;</span>
+<span class="nv">APP_OPTIONS</span><span class="o">=</span><span class="s2">&quot; -c /path/to/app.config -d /path/to/datadir &quot;</span>
+
+<span class="nb">cd</span> <span class="nv">$WORKDIR</span>
+<span class="s2">&quot;</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span><span class="s2">/bin/java&quot;</span> <span class="nv">$JAVA_OPTIONS</span> -jar javaapp.jar <span class="nv">$APP_OPTIONS</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>My Java forking service
+<span class="nv">After</span><span class="o">=</span>syslog.target network.target
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">SuccessExitStatus</span><span class="o">=</span><span class="m">143</span>
+<span class="nv">User</span><span class="o">=</span>appuser
+<span class="nv">Group</span><span class="o">=</span>appgroup
+
+<span class="nv">Type</span><span class="o">=</span>forking
+
+<span class="nv">ExecStart</span><span class="o">=</span>/path/to/wrapper
+<span class="nv">ExecStop</span><span class="o">=</span>/bin/kill -15 <span class="nv">$MAINPID</span>
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div>
+<p>TODO：</p>
+<ul>
+<li>after</li>
+<li>wanted by</li>
+</ul>
+<h2 id="ref">REF<a class="headerlink" href="#ref" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.halo.run/zh/install/centos">在 Centos 7.x 上安装 | Halo Documents</a></li>
+<li><a href="https://www.baeldung.com/linux/run-java-application-as-service">Run a Java Application as a Service on Linux | Baeldung on Linux</a></li>
+</ul>
                 
               
               
